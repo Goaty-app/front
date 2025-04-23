@@ -1,0 +1,52 @@
+:root {
+    /* === PRIMARY === */
+    --btn-primary-bg: #8C7B26;
+    --btn-primary-bg-hover: #7A6D21;
+    --btn-primary-border: #837324;
+    --btn-primary-border-hover: #6B601F;
+    --btn-primary-shadow: 0 0 6px rgba(140, 123, 38, 0.4);
+
+    /* === ACCENT === */
+    --btn-accent-bg: #005F73;
+    --btn-accent-bg-hover: #00475A;
+    --btn-accent-border: #004F63;
+    --btn-accent-border-hover: #003F50;
+    --btn-accent-shadow: 0 0 8px rgba(0, 95, 115, 0.5);
+
+    /* === WARNING === */
+    --btn-warning-bg: #B00020;
+    --btn-warning-bg-hover: #93001B;
+    --btn-warning-border: #A0001D;
+    --btn-warning-border-hover: #7D0016;
+    --btn-warning-shadow: 0 0 6px rgba(176, 0, 32, 0.4);
+
+    /* === DISABLED === */
+    --btn-disabled-bg: #BDBDBD;
+}
+
+.dark-theme {
+    /* === PRIMARY === */
+    --btn-primary-bg: #A89A3B;
+    --btn-primary-bg-hover: #938730;
+    --btn-primary-border: #9F9139;
+    --btn-primary-border-hover: #82782F;
+    --btn-primary-shadow: 0 0 6px rgba(200, 180, 60, 0.35);
+
+    /* === ACCENT === */
+    --btn-accent-bg: #26C6DA;
+    --btn-accent-bg-hover: #1FA7B7;
+    --btn-accent-border: #23B6CA;
+    --btn-accent-border-hover: #1A94A3;
+    --btn-accent-shadow: 0 0 8px rgba(38, 198, 218, 0.5);
+
+    /* === WARNING === */
+    --btn-warning-bg: #EF5350;
+    --btn-warning-bg-hover: #C94340;
+    --btn-warning-border: #E24B48;
+    --btn-warning-border-hover: #B63B38;
+    --btn-warning-shadow: 0 0 6px rgba(239, 83, 80, 0.4);
+
+    /* === DISABLED === */
+    --btn-disabled-bg: #757575;
+    --btn-disabled-shadow: none;
+}

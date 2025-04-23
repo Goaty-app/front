@@ -1,0 +1,27 @@
+/* COLOR */
+.light-text {
+    color: var(--light-text);
+}
+
+.dark-text {
+    color: var(--dark-text);
+}
+
+.warning-text {
+    color: var(--warning-text);
+}
+/* BACKGROUND */
+.bg-layer-1 {
+    background-color: var(--main-layer-1);
+    box-shadow: var(--shadow-layer-1);
+}
+
+.bg-layer-2 {
+    background-color: var(--main-layer-2);
+    box-shadow: var(--shadow-layer-2);
+}
+
+.bg-layer-3 {
+    background-color: var(--main-layer-3);
+    box-shadow: var(--shadow-layer-3);
+}
