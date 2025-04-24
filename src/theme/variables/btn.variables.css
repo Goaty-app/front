@@ -1,10 +1,10 @@
 :root {
     /* === PRIMARY === */
-    --btn-primary-bg: #8C7B26;
-    --btn-primary-bg-hover: #7A6D21;
-    --btn-primary-border: #837324;
-    --btn-primary-border-hover: #6B601F;
-    --btn-primary-shadow: 0 0 6px rgba(140, 123, 38, 0.4);
+    --btn-primary-bg: #4B6B2C;
+    --btn-primary-bg-hover: #3F5C26;     /* ~12% plus foncé */
+    --btn-primary-border: #456227;       /* ~5% plus foncé que bg */
+    --btn-primary-border-hover: #374E20; /* ~17% plus foncé que bg */
+    --btn-primary-shadow: 0 0 6px rgba(75, 107, 44, 0.4);
 
     /* === ACCENT === */
     --btn-accent-bg: #005F73;
