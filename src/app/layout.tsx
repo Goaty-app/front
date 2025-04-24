@@ -13,7 +13,7 @@ export default function RootLayout({ children }: Readonly<{
 }>) {
     return (
         <html lang="fr">
-            <body className="bg-layer-1 min-h-screen overflow-y-auto w-screen flex flex-col sm:flex-col-reverse">
+            <body className="bg-layer-1 min-h-screen overflow-y-auto w-screen flex flex-col sm:flex-col-reverse dark-text">
                 <div className="flex-1 relative flex flex-col sm:flex-row my-4 mx-2 gap-4">
                     <aside className="hidden sm:block sticky top-4 h-full w-[20%] bg-layer-2 rounded-sm p-2">
                         Navigation Comp
