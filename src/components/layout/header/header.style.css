@@ -1,0 +1,7 @@
+.btn {
+    color: var(--btn-primary-bg);
+}
+
+.btn:hover {
+    color: var(--btn-primary-bg-hover);
+}
