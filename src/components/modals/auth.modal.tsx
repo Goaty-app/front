@@ -1,0 +1,1 @@
+// TODO: Auth Modal that is either register or signIn regarding a useState[isRegistering]
