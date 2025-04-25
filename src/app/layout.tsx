@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import Header from "@/components/layout/header/header";
 import {AuthProvider} from "@/context/authContext";
+import Navigation from "@/components/layout/nav/navigation";
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: Readonly<{
                 <AuthProvider>
                     <div className="flex-1 relative flex flex-col sm:flex-row my-4 mx-2 gap-4">
                         <aside className="hidden sm:block sticky top-4 h-full w-[20%] bg-layer-2 rounded-sm p-2">
-                        Navigation Comp
+                            <Navigation/>
                         </aside>
                         <main className="bg-layer-2 flex-1 rounded-sm">
                             {children}
