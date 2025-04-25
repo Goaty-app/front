@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { CircleUserRound, MenuIcon, MoonIcon, Sun } from "lucide-react";
 import './header.style.css';
+import {useAuth} from "@/context/authContext";
 
 const Header: React.FC = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const { isAuthenticated } = useAuth();
+
 
     useEffect(() => {
         const isDark = document.body.classList.contains('dark-theme');
@@ -27,7 +30,7 @@ const Header: React.FC = () => {
     return (
         <header className="bg-layer-2 h-[8%] flex justify-between p-4 items-center">
             <div className="text-xl font-semibold flex gap-4 items-center">
-                <div>Logo</div>
+                <div> { isAuthenticated ? 'Logo' : 'Graou' }</div>
                 <span className="hidden sm:block">GoatManager</span>
             </div>
 
