@@ -6,6 +6,12 @@
     --card-radius: 0.75rem;
     --card-padding: 1rem;
 
+    /* CARD LINK */
+    --card-bg-blue: #0f578d;
+    --card-bg-green: #12ca2e;
+    --card-bg-orange: #bc6a05;
+    --card-bg-yellow: #d8b72e;
+
     /* BADGE */
     --badge-font-size: 0.75rem;
     --badge-padding: 0.25rem 0.5rem;
