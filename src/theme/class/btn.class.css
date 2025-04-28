@@ -18,6 +18,7 @@
 
 /* === ACCENT === */
 .btn-accent {
+    color: var(--light-text);
     background-color: var(--btn-accent-bg);
     border: 1px solid var(--btn-accent-border);
 }
