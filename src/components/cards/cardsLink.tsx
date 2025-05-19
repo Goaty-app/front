@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import React from 'react';
 import './cardLink.css';
+import { Typography } from "@/components/atoms";
 
 interface CardLinkProps {
     href: string;
@@ -25,8 +26,8 @@ export const CardLink: React.FC<CardLinkProps> = ({ href, color, title, descript
                                 : 'bg-yellow'
                 }`}
             >
-                <h3 className="text-2xl text-center font-bold mb-2">{title}</h3>
-                <p className="text-sm opacity-90">{description}</p>
+                <Typography.Title>{title}</Typography.Title>
+                <Typography.Text className="text-sm opacity-85">{description}</Typography.Text>
             </div>
         </Link>
     );
