@@ -4,6 +4,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import React, { useState } from 'react';
 import { EMAIL_REGEX } from '@/utils/regex';
+import {Btn} from "@/components/atoms";
 
 interface AuthModalProps {
     open: boolean;
@@ -50,9 +51,9 @@ const AuthModal: React.FC<AuthModalProps> = ({ open, onOpenChange }) => {
                             {isRegisterMode ? 'Inscription' : 'Connexion'}
                         </Dialog.Title>
                         <Dialog.Close asChild>
-                            <button className="btn btn-accent">
+                            <Btn variant="accent">
                                 <X/>
-                            </button>
+                            </Btn>
                         </Dialog.Close>
                     </div>
 
@@ -74,21 +75,14 @@ const AuthModal: React.FC<AuthModalProps> = ({ open, onOpenChange }) => {
 
                         {error && <div className="text-red-500 text-sm">{error}</div>}
 
-                        <button
-                            onClick={handleSubmit}
-                            className="btn btn-accent w-full py-2 rounded"
-                        >
+                        <Btn onClick={handleSubmit} variant="accent" className={"w-full py-2 rounded"}>
                             {isRegisterMode ? "S'inscrire" : 'Se connecter'}
-                        </button>
-
-                        <button
-                            onClick={toggleMode}
-                            className="btn w-full text-sm text-center hover:underline mt-2"
-                        >
+                        </Btn>
+                        <Btn onClick={toggleMode} variant="default" className={"w-full text-sm text-center hover:underline mt-2"}>
                             {isRegisterMode
                                 ? "Déjà un compte ? Se connecter"
                                 : "Pas encore de compte ? S'inscrire"}
-                        </button>
+                        </Btn>
                     </div>
                 </Dialog.Content>
             </Dialog.Portal>

@@ -5,6 +5,7 @@ import './header.style.css';
 import { useAuth } from '@/context/authContext';
 import Link from 'next/link';
 import AuthModal from "@/components/modals/auth.modal";
+import {Btn, Typography} from "@/components/atoms";
 
 const Header: React.FC = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -41,19 +42,19 @@ const Header: React.FC = () => {
                 </div>
 
                 <div className="flex gap-4 text-xl font-semibold items-center">
-                    {isAuthenticated && <div>Alertes</div>}
+                    {isAuthenticated && <Typography.Text>Alertes</Typography.Text>}
 
-                    <button className="btn cursor-pointer icon" onClick={toggleTheme}>
+                    <Btn onClick={toggleTheme} variant="default" className="btn cursor-pointer icon">
                         {isDarkTheme ? <MoonIcon /> : <Sun />}
-                    </button>
+                    </Btn>
 
-                    <button className="btn cursor-pointer icon" onClick={handleAuthClick}>
+                    <Btn variant="default" onClick={handleAuthClick} className="cursor-pointer icon">
                         {isAuthenticated ? <LogOut /> : <CircleUserRound />}
-                    </button>
+                    </Btn>
 
-                    <button className="btn cursor-pointer sm:hidden">
+                    <Btn variant="default" className="cursor-pointer icon sm:hidden">
                         <MenuIcon />
-                    </button>
+                    </Btn>
                 </div>
             </header>
 
