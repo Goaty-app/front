@@ -4,8 +4,6 @@ import {AuthProvider} from "@/context/authContext";
 import {DeviceProvider} from "@/context/deviceContext";
 import Template from "@/components/template";
 import {Containers} from "@/components/atoms";
-import aside from "@/components/atoms/Containers/aside";
-
 
 export const metadata: Metadata = {
     title: "Goaty-App",
