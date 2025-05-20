@@ -1,10 +1,20 @@
-import Title from './Typography/title';
-import Text from "./Typography/text";
+// VARIOUS
 import Btn from "./btn";
 import Link from "./link"
-import Nav from "./nav"
 import Input from './input';
 
-const Typography = { Title, Text };
+// TYPOGRAPHY
+import Title from './Typography/title';
+import Text from "./Typography/text";
 
-export { Typography, Btn, Link, Nav, Input};
+// CONTAINER
+import Simple from './Containers/simple';
+import Nav from './Containers/nav';
+import Header from './Containers/header';
+import Main from './Containers/main';
+import Aside from './Containers/aside';
+
+const Typography = { Title, Text };
+const Containers  = { Nav, Simple, Header, Main, Aside}
+
+export { Typography, Containers, Btn, Link, Input};

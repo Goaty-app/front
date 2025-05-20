@@ -4,7 +4,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import React, { useState } from 'react';
 import { EMAIL_REGEX } from '@/utils/regex';
-import { Btn, Input} from "@/components/atoms";
+import {Btn, Containers, Input} from "@/components/atoms";
 
 interface AuthModalProps {
     open: boolean;
@@ -46,7 +46,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ open, onOpenChange }) => {
             <Dialog.Portal>
                 <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
                 <Dialog.Content className="modal-center w-[90%] max-w-md p-6 bg-layer-2 rounded-2xl shadow-xl">
-                    <div className="flex justify-between items-center mb-4">
+                    <Containers.Simple className="flex justify-between items-center mb-4">
                         <Dialog.Title className="text-2xl font-bold">
                             {isRegisterMode ? 'Inscription' : 'Connexion'}
                         </Dialog.Title>
@@ -55,35 +55,36 @@ const AuthModal: React.FC<AuthModalProps> = ({ open, onOpenChange }) => {
                                 <X/>
                             </Btn>
                         </Dialog.Close>
-                    </div>
+                    </Containers.Simple>
 
-                    <div className="space-y-4">
-                        <Input
-                            type="email"
-                            placeholder="Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="w-full p-2 rounded border bg-layer-1"
-                        />
-                        <Input
-                            type="password"
-                            placeholder="Mot de passe"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="w-full p-2 rounded border bg-layer-1"
-                        />
+                    <Containers.Simple className="space-y-4">
+                            <Input
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                className="w-full p-2 rounded border bg-layer-1"
+                            />
+                            <Input
+                                type="password"
+                                placeholder="Mot de passe"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                className="w-full p-2 rounded border bg-layer-1"
+                            />
 
-                        {error && <div className="text-red-500 text-sm">{error}</div>}
+                            {error && <div className="text-red-500 text-sm">{error}</div>}
 
-                        <Btn onClick={handleSubmit} variant="accent" className={"w-full py-2 rounded"}>
-                            {isRegisterMode ? "S'inscrire" : 'Se connecter'}
-                        </Btn>
-                        <Btn onClick={toggleMode} variant="default" className={"w-full text-sm text-center hover:underline mt-2"}>
-                            {isRegisterMode
-                                ? "Déjà un compte ? Se connecter"
-                                : "Pas encore de compte ? S'inscrire"}
-                        </Btn>
-                    </div>
+                            <Btn onClick={handleSubmit} variant="accent" className={"w-full py-2 rounded"}>
+                                {isRegisterMode ? "S'inscrire" : 'Se connecter'}
+                            </Btn>
+                            <Btn onClick={toggleMode} variant="default"
+                                 className={"w-full text-sm text-center hover:underline mt-2"}>
+                                {isRegisterMode
+                                    ? "Déjà un compte ? Se connecter"
+                                    : "Pas encore de compte ? S'inscrire"}
+                            </Btn>
+                    </Containers.Simple>
                 </Dialog.Content>
             </Dialog.Portal>
         </Dialog.Root>

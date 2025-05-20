@@ -1,7 +1,7 @@
 'use client';
 
-import {CardLink} from "@/components/cards/cardsLink";
 import {useAuth} from "@/context/authContext";
+import {CardLink} from "@/components/molecules";
 
 export default function Home() {
     const { isAuthenticated } = useAuth();
