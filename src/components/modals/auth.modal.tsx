@@ -4,7 +4,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import React, { useState } from 'react';
 import { EMAIL_REGEX } from '@/utils/regex';
-import {Btn} from "@/components/atoms";
+import { Btn, Input} from "@/components/atoms";
 
 interface AuthModalProps {
     open: boolean;
@@ -58,14 +58,14 @@ const AuthModal: React.FC<AuthModalProps> = ({ open, onOpenChange }) => {
                     </div>
 
                     <div className="space-y-4">
-                        <input
+                        <Input
                             type="email"
                             placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="w-full p-2 rounded border bg-layer-1"
                         />
-                        <input
+                        <Input
                             type="password"
                             placeholder="Mot de passe"
                             value={password}
