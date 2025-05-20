@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { CircleUserRound, LogOut, MenuIcon, MoonIcon, Sun } from 'lucide-react';
 import './header.style.css';
 import { useAuth } from '@/context/authContext';
-import Link from 'next/link';
 import AuthModal from "@/components/modals/auth.modal";
 import {Btn, Typography} from "@/components/atoms";
+import { Link } from "@/components/atoms";  
 
 const Header: React.FC = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
         <>
             <header className="bg-layer-2 h-[8%] flex justify-between p-4 items-center">
                 <div className="text-xl font-semibold flex gap-4 items-center">
-                    <Link href="/" className="hidden sm:block">Goaty</Link>
+                    <Link href="/" variant="primary">Goaty</Link>
                 </div>
 
                 <div className="flex gap-4 text-xl font-semibold items-center">
