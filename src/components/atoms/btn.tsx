@@ -9,10 +9,9 @@ export interface BtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
 }
 
 const Btn = React.forwardRef<HTMLButtonElement, BtnProps>(
-    ({ children, variant, isDisabled = false, className = '', ...rest }, ref) => {
+    ({ children, variant, className = '', ...rest }, ref) => {
         Btn.displayName = 'Btn';
         const btnClass = () => {
-            if (isDisabled) return 'btn-disabled';
             switch (variant) {
                 case 'primary':
                     return 'btn-primary';
@@ -29,7 +28,6 @@ const Btn = React.forwardRef<HTMLButtonElement, BtnProps>(
         return (
             <button
                 ref={ref}
-                disabled={isDisabled}
                 className={`btn ${btnClass()} ${className}`}
                 {...rest}
             >

@@ -4,6 +4,10 @@
     border-radius: 1rem;
 }
 
+.btn:disabled {
+    opacity: 0.6;
+}
+
 /* === PRIMARY === */
 .btn-primary {
     background-color: var(--btn-primary-bg);
@@ -39,12 +43,4 @@
     background-color: var(--btn-warning-bg-hover);
     border-color: var(--btn-warning-border-hover);
     box-shadow: var(--btn-warning-shadow);
-}
-
-/* === DISABLED === */
-.btn-disabled {
-    background-color: var(--btn-disabled-bg);
-    border: 1px solid var(--btn-disabled-bg);
-    pointer-events: none;
-    opacity: 0.6;
 }

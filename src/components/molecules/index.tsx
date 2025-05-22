@@ -1,5 +1,6 @@
-// VARIOUS
-import CardLink from "./CardLink/cardsLink";
+// CARD
+import CardLink from "@/components/molecules/Card/cardsLink";
+import CardBtn from "@/components/molecules/Card/cardsBtn";
 
 // ICONS
 import ThemeIcon from "./Icons/ThemeIcon";
@@ -14,14 +15,15 @@ import HerdSubSection from "./Navigation/HerdSubSection";
 // LOADER
 import GoatGroup from "./GoatGroup";
 
-// AUTH
-import AuthForm from "./AuthForm";
-import ModalHeader from "./ModalHeader";
-
 const Navigation = {
   AccordionSection,
   HerdSubSection,
 };
+
+const Cards = {
+  CardLink,
+  CardBtn,
+}
 
 const Icons = {
   ThemeIcon,
@@ -32,4 +34,4 @@ const Icons = {
   },
 };
 
-export { AuthForm, ModalHeader, GoatGroup, CardLink, Icons, Navigation };
+export { GoatGroup, Cards, Icons, Navigation };
