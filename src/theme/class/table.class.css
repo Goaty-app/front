@@ -1,0 +1,12 @@
+.bg-row {
+    background-color: var(--main-layer-1) !important;
+}
+.bg-row:hover {
+    background-color: var(--main-layer-2) !important;
+}
+
+.bg-header {
+    background-color: var(--btn-primary-bg) !important;
+}
+
+

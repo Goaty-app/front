@@ -28,7 +28,7 @@ const FindGoat: React.FC<ModalProps> = ({open, onOpenChange}) => {
             return;
         }
         onOpenChange(false);
-        router.push(`/goat/search?name=${name}`);
+        router.push(`/goat?name=${name}`);
     };
 
     return (
