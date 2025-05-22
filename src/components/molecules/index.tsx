@@ -5,7 +5,7 @@ import CardLink from "./CardLink/cardsLink";
 import ThemeIcon from "./Icons/ThemeIcon";
 import AuthIcon from "./Icons/AuthIcon";
 import BurgerIcon from "./Icons/MenuIcon.mobile";
-import AppIcon from "./Icons/AppIcon";
+import GoatIcon from "./Icons/GoatIcon";
 
 // NAVIGATION
 import AccordionSection from "./Navigation/AccordionSection";
@@ -26,7 +26,7 @@ const Navigation = {
 const Icons = {
   ThemeIcon,
   AuthIcon,
-  AppIcon,
+  GoatIcon,
   Mobile: {
     BurgerIcon,
   },
