@@ -1,10 +1,12 @@
-import ImageGoat from "../atoms/ImageGoat";
+"use client";
+import "./";
+import ImageGoat from "../atoms/Goat/ImageGoat";
 
 const GoatGroup = () => (
   <>
     <ImageGoat />
-    <ImageGoat delay="animate-delay-1" />
-    <ImageGoat delay="animate-delay-2" />
+    <ImageGoat delay="delay-animation-1" />
+    <ImageGoat delay="delay-animation-2" />
   </>
 );
 

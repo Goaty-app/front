@@ -1,13 +1,14 @@
 "use client";
 
+import Simple from "../atoms/Containers/simple";
 import GoatGroup from "../molecules/GoatGroup";
-import Grass from "../atoms/Grass";
+import Grass from "../atoms/Grass/Grass";
 
 const Loader = () => (
-  <div className="w-full h-full flex gap-6 justify-center relative">
+  <Simple className="w-full h-full flex gap-6 justify-center relative">
     <Grass />
     <GoatGroup />
-  </div>
+  </Simple>
 );
 
 export default Loader;

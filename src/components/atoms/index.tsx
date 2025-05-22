@@ -15,8 +15,8 @@ import Main from "./Containers/main";
 import Aside from "./Containers/aside";
 
 // LOADER
-import Grass from "./Grass";
-import ImageGoat from "./ImageGoat";
+import Grass from "./Grass/Grass";
+import ImageGoat from "./Goat/ImageGoat";
 
 const Loader = { Grass, ImageGoat };
 const Typography = { Title, Text };
