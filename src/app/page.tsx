@@ -19,7 +19,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-8 h-full p-4">
                     <Cards.CardBtn onClick={handleOpenFindGoat} color={'orange'} title={'Chèvre'} description={'Trouver une chèvre.'}/>
                     <Cards.CardLink href={'/care'} color={'blue'} title={'Soin'} description={'Ajouter un soin.'}/>
-                    <Cards.CardLink href={'/herd/health'} color={'green'} title={'Analyse'} description={'Observer les données liées à un troupeau !'}/>
+                    <Cards.CardLink href={'/production'} color={'green'} title={'Production'} description={'Observer la production de votre élevage !'}/>
                     <Cards.CardLink href={'/herd/feae'} color={'yellow'} title={'Troupeau'} description={'Gérer vos troupeaux ici !'}/>
                 </div>
                 :
