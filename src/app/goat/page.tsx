@@ -1,44 +1,13 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-import {Goat, mockHerds} from "@/interface/herd.interface";
-import AnimalSearchTemplate from "@/components/template/AnimalSearchTemplate";
-import {SearchTable} from "@/components/Organismes";
+import {Suspense} from "react";
+import SearchAnimalPage from "@/components/Pages/SearchAnimalPage";
 
-export default function GoatPage() {
-    const searchParams = useSearchParams();
-    const [name, setName] = useState(searchParams.get('name') || '');
-    const [herd, setHerd] = useState('');
-
-    const allGoats: Goat[] = useMemo(() => {
-        return mockHerds.flatMap((herd) =>
-            herd.animals.map((goat) => ({
-                ...goat,
-                herdAlias: herd.alias,
-                herdId: herd.id
-            }))
-        );
-    }, []);
-
-    const filteredGoats = useMemo(() => {
-        return allGoats.filter((goat) => {
-            const matchesName = name ? goat.name.toLowerCase().includes(name.toLowerCase()) : true;
-            const matchesHerd = herd ? goat.herdId === herd : true;
-            return matchesName && matchesHerd;
-        });
-    }, [name, herd, allGoats]);
+export default function Home() {
 
     return (
-        <AnimalSearchTemplate>
-            <SearchTable.SearchAnimal
-                herds={mockHerds}
-                goats={filteredGoats}
-                name={name}
-                herd={herd}
-                onNameChange={setName}
-                onHerdChange={setHerd}
-            />
-        </AnimalSearchTemplate>
+        <Suspense fallback={<div>Loading...</div>}>
+            <SearchAnimalPage/>
+        </Suspense>
     );
 }
