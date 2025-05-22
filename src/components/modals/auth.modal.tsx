@@ -5,13 +5,11 @@ import {X} from 'lucide-react';
 import React, {useState} from 'react';
 import {EMAIL_REGEX} from '@/utils/regex';
 import {Btn, Containers, Input, Typography} from "@/components/atoms";
+import {Description} from "@radix-ui/react-dialog";
+import {ModalProps} from "@/interface/modal.interface";
 
-interface AuthModalProps {
-    open: boolean;
-    onOpenChange: (open: boolean) => void;
-}
 
-const AuthModal: React.FC<AuthModalProps> = ({open, onOpenChange}) => {
+const AuthModal: React.FC<ModalProps> = ({open, onOpenChange}) => {
     const [isRegisterMode, setIsRegisterMode] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -66,7 +64,7 @@ const AuthModal: React.FC<AuthModalProps> = ({open, onOpenChange}) => {
             <Dialog.Portal>
                 <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm"/>
                 <Dialog.Content className="modal-center w-[90%] max-w-md p-6 bg-layer-2 rounded-2xl shadow-xl">
-                    <Containers.Simple className="flex justify-between items-center mb-4">
+                    <Containers.Simple className="flex justify-between items-center">
                         <Dialog.Title className="text-2xl font-bold">
                             {isRegisterMode ? 'Inscription' : 'Connexion'}
                         </Dialog.Title>
@@ -76,8 +74,9 @@ const AuthModal: React.FC<AuthModalProps> = ({open, onOpenChange}) => {
                             </Btn>
                         </Dialog.Close>
                     </Containers.Simple>
+                    <Description className="text-sm accent-text italic"></Description>
 
-                    <Containers.Simple className="space-y-4">
+                    <Containers.Simple className="space-y-4 mt-12">
                         <Input
                             type="email"
                             placeholder="Email"
@@ -85,7 +84,7 @@ const AuthModal: React.FC<AuthModalProps> = ({open, onOpenChange}) => {
                             onChange={e => handleSetEmail(e.target.value)}
                             className="w-full p-2 rounded border bg-layer-1"
                         />
-                        {errorMail && <Typography.Text className="text-red-500 text-sm">{errorMail}</Typography.Text>}
+                        {errorMail && <Typography.Text className="warning-text text-sm">{errorMail}</Typography.Text>}
 
                         <Input
                             type="password"
@@ -95,13 +94,13 @@ const AuthModal: React.FC<AuthModalProps> = ({open, onOpenChange}) => {
                             className="w-full p-2 rounded border bg-layer-1"
                         />
 
-                        {errorPwd && <Typography.Text className="text-red-500 text-sm">{errorPwd}</Typography.Text>}
+                        {errorPwd && <Typography.Text className="warning-text text-sm">{errorPwd}</Typography.Text>}
 
-                        <Btn onClick={handleSubmit} variant="accent" className={"w-full py-2 rounded"}>
+                        <Btn onClick={handleSubmit} variant="accent" className="w-full py-2 rounded mt-8">
                             {isRegisterMode ? "S'inscrire" : 'Se connecter'}
                         </Btn>
                         <Btn onClick={toggleMode} variant="default"
-                             className={"w-full text-sm text-center hover:underline mt-2"}>
+                             className="w-full text-sm text-center hover:underline mt-2">
                             {isRegisterMode
                                 ? "Déjà un compte ? Se connecter"
                                 : "Pas encore de compte ? S'inscrire"}

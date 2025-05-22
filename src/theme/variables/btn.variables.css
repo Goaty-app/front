@@ -21,7 +21,7 @@
     --btn-warning-shadow: 0 0 6px rgba(176, 0, 32, 0.4);
 
     /* === DISABLED === */
-    --btn-disabled-bg: #BDBDBD;
+    --btn-disabled-bg: #494a49;
 }
 
 .dark-theme {
@@ -47,6 +47,6 @@
     --btn-warning-shadow: 0 0 6px rgba(239, 83, 80, 0.4);
 
     /* === DISABLED === */
-    --btn-disabled-bg: #757575;
+    --btn-disabled-bg: #494a49;
     --btn-disabled-shadow: none;
 }

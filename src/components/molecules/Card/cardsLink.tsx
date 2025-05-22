@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React from 'react';
-import './cardLink.css';
+import './card.css';
 import {Containers, Typography} from "@/components/atoms";
 
 interface CardLinkProps {
