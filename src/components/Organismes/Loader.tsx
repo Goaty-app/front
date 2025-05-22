@@ -5,7 +5,7 @@ import GoatGroup from "../molecules/GoatGroup";
 import Grass from "../atoms/Grass/Grass";
 
 const Loader = () => (
-  <Simple className="w-full h-full flex gap-6 justify-center relative">
+  <Simple className="w-full flex gap-6 justify-center relative">
     <Grass />
     <GoatGroup />
   </Simple>
