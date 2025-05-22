@@ -1,28 +1,31 @@
 // VARIOUS
-import CardLink from './CardLink/cardsLink';
+import CardLink from "./CardLink/cardsLink";
 
 // ICONS
-import ThemeIcon from './Icons/ThemeIcon';
-import AuthIcon from './Icons/AuthIcon';
+import ThemeIcon from "./Icons/ThemeIcon";
+import AuthIcon from "./Icons/AuthIcon";
 import BurgerIcon from "./Icons/MenuIcon.mobile";
-import AppIcon from './Icons/AppIcon';
+import AppIcon from "./Icons/AppIcon";
 
 // NAVIGATION
-import  AccordionSection from'./Navigation/AccordionSection';
-import HerdSubSection from './Navigation/HerdSubSection';
+import AccordionSection from "./Navigation/AccordionSection";
+import HerdSubSection from "./Navigation/HerdSubSection";
+
+// LOADER
+import GoatGroup from "./GoatGroup";
 
 const Navigation = {
-    AccordionSection,
-    HerdSubSection,
-}
+  AccordionSection,
+  HerdSubSection,
+};
 
 const Icons = {
-    ThemeIcon,
-    AuthIcon,
-    AppIcon,
-    Mobile: {
-        BurgerIcon
-    }
-}
+  ThemeIcon,
+  AuthIcon,
+  AppIcon,
+  Mobile: {
+    BurgerIcon,
+  },
+};
 
-export {CardLink, Icons, Navigation};
+export { GoatGroup, CardLink, Icons, Navigation };
