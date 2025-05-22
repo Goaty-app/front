@@ -14,6 +14,10 @@ import HerdSubSection from "./Navigation/HerdSubSection";
 // LOADER
 import GoatGroup from "./GoatGroup";
 
+// AUTH
+import AuthForm from "./AuthForm";
+import ModalHeader from "./ModalHeader";
+
 const Navigation = {
   AccordionSection,
   HerdSubSection,
@@ -28,4 +32,4 @@ const Icons = {
   },
 };
 
-export { GoatGroup, CardLink, Icons, Navigation };
+export { AuthForm, ModalHeader, GoatGroup, CardLink, Icons, Navigation };
