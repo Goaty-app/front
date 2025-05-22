@@ -12,7 +12,7 @@ export default function Home() {
             { !isAuthenticated ?
                 <div className="flex flex-col sm:flex-row gap-8 h-full p-4">
                     <CardLink href={'/herd'} color={'orange'} title={'Chèvre'} description={'Trouver une chèvre.'}/>
-                    <CardLink href={'/herd/test'} color={'blue'} title={'Soin'} description={'Ajouter un soin.'}/>
+                    <CardLink href={'/care'} color={'blue'} title={'Soin'} description={'Ajouter un soin.'}/>
                     <CardLink href={'/herd/health'} color={'green'} title={'Analyse'} description={'Observer les données liées à un troupeau !'}/>
                     <CardLink href={'/herd/feae'} color={'yellow'} title={'Troupeau'} description={'Gérer vos troupeaux ici !'}/>
                 </div>
