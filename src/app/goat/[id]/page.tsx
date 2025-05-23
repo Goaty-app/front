@@ -27,7 +27,7 @@ export default function Page() {
     return (
         <Box padding={4}>
             <Typography.Title className="text-center mb-6">
-                Détails de l'animal : {animal.name}
+                Détails : {animal.name}
             </Typography.Title>
 
             {/* PAGE */}
@@ -52,7 +52,7 @@ export default function Page() {
                         </Containers.Simple>
 
                         <Containers.Simple>
-                            <Typography.Text>Pays d'origine</Typography.Text>
+                            <Typography.Text>Origine</Typography.Text>
                             <Typography.Text>{animal.origin_country}</Typography.Text>
                         </Containers.Simple>
 
