@@ -2,6 +2,10 @@
 import CardLink from "@/components/molecules/Card/cardsLink";
 import CardBtn from "@/components/molecules/Card/cardsBtn";
 
+// TABLE
+import TableFilter from "./AnimalTable/TableFilter";
+import AnimalTable from "./AnimalTable/AnimalTable";
+
 // ICONS
 import ThemeIcon from "./Icons/ThemeIcon";
 import AuthIcon from "./Icons/AuthIcon";
@@ -23,6 +27,11 @@ const Navigation = {
   HerdSubSection,
 };
 
+const Table = {
+  AnimalTable,
+  TableFilter,
+}
+
 const Cards = {
   CardLink,
   CardBtn,
@@ -37,4 +46,5 @@ const Icons = {
   },
 };
 
-export { ProductionTab, GoatGroup, Cards, Icons, Navigation };
+
+export {Table, ProductionTab, GoatGroup, Cards, Icons, Navigation };

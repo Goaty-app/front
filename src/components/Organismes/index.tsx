@@ -3,4 +3,11 @@ import RightSide from "./Header/RightSide";
 import Loader from "./Loader";
 import AppIcon from "./AppIcon";
 
-export { HerdNavigationSection, RightSide, Loader, AppIcon };
+// SEARCH TABLE
+import SearchAnimal from "./SearchTable/SearchAnimal";
+
+const SearchTable = {
+    SearchAnimal,
+}
+
+export { HerdNavigationSection, RightSide, Loader, AppIcon,SearchTable };

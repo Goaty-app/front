@@ -7,6 +7,10 @@
     color: var(--dark-text);
 }
 
+.link-text {
+    color: var(--primary-text)
+}
+
 .warning-text {
     color: var(--warning-text);
 }

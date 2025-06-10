@@ -8,8 +8,9 @@
 
     --light-text: #FAFAFA;
     --dark-text: #0C0C0C;
-    --accent-text: #4B6B2C;
+    --primary-text: #4B6B2C;
     --warning-text: #f12222;
+    --accent-text: #005F73;
 
 
     --shadow-layer-1: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -27,8 +28,9 @@
 
     --light-text: #cfa933;
     --dark-text: #cfa933;
-    --accent-text: #4B6B2C;
+    --primary-text: #4B6B2C;
     --warning-text: #f12222;
+    --accent-text: #005F73;
 
     --shadow-layer-1: 0 2px 4px rgba(0, 0, 0, 0.25);
     --shadow-layer-2: 0 3px 6px rgba(0, 0, 0, 0.3);
