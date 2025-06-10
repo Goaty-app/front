@@ -1,23 +1,28 @@
 import React from "react";
+import { TableCell, TableRow, Tooltip } from "@mui/material";
 
 const ProductionLine = ({ production, ...props }) => {
   return (
-    <div className="border m-2 rounded">
-      <div className={" "}>
-        <h3>{production.productionType.name}</h3>
-        <p>
-          {production.quantity} {production.quantityUnit}
-        </p>
-        <p>
-          Herd: {production.herd.name} ({production.herd.location})
-        </p>
-        <p className="truncate" title={production.notes}>
-          Notes: {production.notes}
-        </p>
-        <p>Date: {new Date(production.production_date).toLocaleDateString()}</p>
-      </div>
-      <div className="">{props.children}</div>
-    </div>
+    <TableRow className="bg-row " key={production.id} hover>
+      <TableCell>{production.productionType.name}</TableCell>
+      <TableCell>
+        {production.quantity} {production.quantityUnit}
+      </TableCell>
+      <TableCell>
+        Herd: {production.herd.name} ({production.herd.location})
+      </TableCell>
+      <TableCell className={""}>
+        <Tooltip title={production.notes}>
+          <p className="w-100 truncate text-ellipsis">
+            Notes: {production.notes}
+          </p>
+        </Tooltip>
+      </TableCell>
+      <TableCell>
+        Date: {new Date(production.production_date).toLocaleDateString()}
+      </TableCell>
+      <TableCell>{props.children}</TableCell>
+    </TableRow>
   );
 };
 
