@@ -18,8 +18,13 @@ import Aside from "./Containers/aside";
 import Grass from "./Grass/Grass";
 import ImageGoat from "./Goat/ImageGoat";
 
+// PRODUCTION
+import ProductionLine from "@/components/atoms/Production/ProductionLine";
+import CrudProductionButton from "@/components/atoms/Production/CrudProductionButton";
+
+const Production = { ProductionLine, CrudProductionButton };
 const Loader = { Grass, ImageGoat };
 const Typography = { Title, Text };
 const Containers = { Nav, Simple, Header, Main, Aside };
 
-export { Typography, Containers, Loader, Btn, Link, Input };
+export { Typography, Containers, Loader, Btn, Link, Input, Production };

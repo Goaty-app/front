@@ -15,6 +15,9 @@ import HerdSubSection from "./Navigation/HerdSubSection";
 // LOADER
 import GoatGroup from "./GoatGroup";
 
+// PRODUCTION
+import ProductionTab from "./ProductionTab";
+
 const Navigation = {
   AccordionSection,
   HerdSubSection,
@@ -23,7 +26,7 @@ const Navigation = {
 const Cards = {
   CardLink,
   CardBtn,
-}
+};
 
 const Icons = {
   ThemeIcon,
@@ -34,4 +37,4 @@ const Icons = {
   },
 };
 
-export { GoatGroup, Cards, Icons, Navigation };
+export { ProductionTab, GoatGroup, Cards, Icons, Navigation };
