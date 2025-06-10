@@ -12,9 +12,9 @@ interface GoatTableProps {
 
 const AnimalTable: React.FC<GoatTableProps> = ({ goats }) => (
     <TableContainer component={Paper} className="h-full overflow-y-auto border-gray-400 border border-solid">
-        <Table stickyHeader size="small">
+        <Table size="small">
             <TableHead>
-                <TableRow className="z-10">
+                <TableRow>
                     <TableCell className="bg-header"><Typography.Text className="dark-text">Nom</Typography.Text></TableCell>
                     <TableCell className="bg-header"><Typography.Text className="dark-text">Troupeau</Typography.Text></TableCell>
                     <TableCell className="bg-header"><Typography.Text className="dark-text">ID</Typography.Text></TableCell>
