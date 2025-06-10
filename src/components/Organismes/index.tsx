@@ -5,9 +5,14 @@ import AppIcon from "./AppIcon";
 
 // SEARCH TABLE
 import SearchAnimal from "./SearchTable/SearchAnimal";
+import AnimalMainContent from "@/components/Organismes/AnimalDetails/AnimalMainContent";
 
 const SearchTable = {
     SearchAnimal,
 }
 
-export { HerdNavigationSection, RightSide, Loader, AppIcon,SearchTable };
+const AnimalDetails = {
+    AnimalMainContent,
+}
+
+export { HerdNavigationSection, RightSide, Loader, AppIcon, SearchTable, AnimalDetails };

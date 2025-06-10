@@ -22,10 +22,21 @@ import GoatGroup from "./GoatGroup";
 // PRODUCTION
 import ProductionTab from "./ProductionTab";
 
+import LabeledText from './LabeledText';
+
+// BTN
+import EditAnimal from "@/components/molecules/Btns/EditAnimal";
+import AddHealthcare from "@/components/molecules/Btns/AddHealthcare";
+
 const Navigation = {
   AccordionSection,
   HerdSubSection,
 };
+
+const LogicBtn = {
+  EditAnimal,
+  AddHealthcare,
+}
 
 const Table = {
   AnimalTable,
@@ -46,5 +57,4 @@ const Icons = {
   },
 };
 
-
-export {Table, ProductionTab, GoatGroup, Cards, Icons, Navigation };
+export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, LabeledText, LogicBtn };

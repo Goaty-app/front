@@ -1,15 +1,27 @@
+export interface MockAnimal {
+    id: string;
+    name: string;
+}
+
 export interface Animal {
     id: string;
     name: string;
+    herdId: number,
+    idNumber: string,
+    status: string,
+    animalTypeId: number,
+    behaviorNotes: string,
+    originCountry: string,
+    gender: "male" | "female",
 }
 
 export interface Herd {
     id: string;
     alias: string;
-    animals: Animal[];
+    animals: MockAnimal[];
 }
 
-export interface Goat extends Animal {
+export interface Goat extends MockAnimal {
     herdAlias: string;
     herdId: string;
 }
