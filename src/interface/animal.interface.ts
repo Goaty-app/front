@@ -1,10 +1,9 @@
 import {AllType} from "@/interface/allType.interface";
-import {ForeignKey} from "@/interface/utils.interface";
 
 export interface Animal {
     id: string;
     name: string | null;
-    herd: ForeignKey,
+    herd: AllType,
     idNumber: string,
     status: string,
     animalType: AllType,
@@ -30,7 +29,7 @@ export const mockAnimals: Animal[] = [
     {
         id: "a1",
         name: "Simba",
-        herd: { id: 101 },
+        herd: { id: 101, name: "Herd Alpha" },
         idNumber: "ID1001",
         status: "healthy",
         animalType: { id: 1, name: "Lion" },
@@ -42,7 +41,7 @@ export const mockAnimals: Animal[] = [
     {
         id: "a2",
         name: "Nala",
-        herd: { id: 101 },
+        herd: { id: 101 , name: "Herd Alpha" },
         idNumber: "ID1002",
         status: "healthy",
         animalType: { id: 1, name: "Lion" },
@@ -54,7 +53,7 @@ export const mockAnimals: Animal[] = [
     {
         id: "a3",
         name: "Dumbo",
-        herd: { id: 102 },
+        herd: { id: 102, name: "Herd Beta" },
         idNumber: "ID2001",
         status: "injured",
         animalType: { id: 2, name: "Elephant" },

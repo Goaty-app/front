@@ -20,7 +20,7 @@ const TableFilter: React.FC<GoatFiltersProps> = ({ name, herd, herds, onNameChan
         <Select displayEmpty value={herd} onChange={(e) => onHerdChangeAction(e.target.value)} variant="outlined">
             <MenuItem value="">Tous les troupeaux</MenuItem>
             {herds.map((h) => (
-                <MenuItem key={h.id} value={h.id}>{h.alias}</MenuItem>
+                <MenuItem key={h.name} value={h.id}>{h.name}</MenuItem>
             ))}
         </Select>
     </Containers.Simple>

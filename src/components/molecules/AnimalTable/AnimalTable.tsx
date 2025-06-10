@@ -14,8 +14,9 @@ const AnimalTable: React.FC<{ animals: Array<Animal> }> = ({animals: animals} ) 
             <TableHead>
                 <TableRow>
                     <TableCell className="bg-header"><Typography.Text className="dark-text">Nom</Typography.Text></TableCell>
-                    <TableCell className="bg-header"><Typography.Text className="dark-text">Troupeau</Typography.Text></TableCell>
+                    <TableCell className="bg-header"><Typography.Text className="dark-text">Genre</Typography.Text></TableCell>
                     <TableCell className="bg-header"><Typography.Text className="dark-text">ID</Typography.Text></TableCell>
+                    <TableCell className="bg-header"><Typography.Text className="dark-text">Troupeau</Typography.Text></TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -25,6 +26,8 @@ const AnimalTable: React.FC<{ animals: Array<Animal> }> = ({animals: animals} ) 
                             <Link href={`/goat/${animal.id}`} className="link-text hover:underline">{animal.name}</Link>
                         </TableCell>
                         <TableCell>{animal.gender}</TableCell>
+                        <TableCell>{animal.id}</TableCell>
+                        <TableCell>{animal.herd.name}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>
