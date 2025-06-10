@@ -1,15 +1,15 @@
+import {AllType} from "@/interface/allType.interface";
+import {ForeignKey} from "@/interface/utils.interface";
 
 export interface Production {
     id: number,
-    production_date: string,
-    expiration_date: string,
+    productionDate: string,
+    expirationDate: string,
     quantity: number,
     quantityUnit: string,
-    notes: string,
-    createdAt: string,
-    // TODO: Remove Mock for herd: {id: number},
-    herd: MockHerdFromId,
-    productionType: ProductionType
+    notes: string | null,
+    herd: ForeignKey,
+    productionType: AllType
 }
 export interface MockHerdFromId {
     id: number,

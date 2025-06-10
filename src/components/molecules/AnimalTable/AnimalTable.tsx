@@ -3,14 +3,12 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import Link from 'next/link';
 import { Typography } from '@/components/atoms';
-import {Goat} from "@/interface/herd.interface";
 import React from "react";
+import {Animal} from "@/interface/animal.interface";
 
-interface GoatTableProps {
-    goats: Goat[];
-}
 
-const AnimalTable: React.FC<GoatTableProps> = ({ goats }) => (
+
+const AnimalTable: React.FC<{ animals: Array<Animal> }> = ({animals: animals} ) => (
     <TableContainer component={Paper} className="h-full overflow-y-auto border-gray-400 border border-solid">
         <Table size="small">
             <TableHead>
@@ -21,13 +19,12 @@ const AnimalTable: React.FC<GoatTableProps> = ({ goats }) => (
                 </TableRow>
             </TableHead>
             <TableBody>
-                {goats.map((goat) => (
-                    <TableRow className="bg-row" key={goat.id} hover>
+                {animals.map((animal) => (
+                    <TableRow className="bg-row" key={animal.id} hover>
                         <TableCell>
-                            <Link href={`/goat/${goat.id}`} className="link-text hover:underline">{goat.name}</Link>
+                            <Link href={`/goat/${animal.id}`} className="link-text hover:underline">{animal.name}</Link>
                         </TableCell>
-                        <TableCell>{goat.herdAlias}</TableCell>
-                        <TableCell>{goat.id}</TableCell>
+                        <TableCell>{animal.gender}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>
