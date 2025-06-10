@@ -1,9 +1,10 @@
 import React from "react";
+import {Production} from "@/interface/production.interface";
 
-const ProductionLine = ({ production, ...props }) => {
+const ProductionLine: React.FC<{children: React.ReactNode, production: Production}> = ({ production, ...props }) => {
   return (
     <div className="border m-2 rounded">
-      <div className={" "}>
+      <div>
         <h3>{production.productionType.name}</h3>
         <p>
           {production.quantity} {production.quantityUnit}
@@ -16,7 +17,7 @@ const ProductionLine = ({ production, ...props }) => {
         </p>
         <p>Date: {new Date(production.production_date).toLocaleDateString()}</p>
       </div>
-      <div className="">{props.children}</div>
+      <div>{props.children}</div>
     </div>
   );
 };
