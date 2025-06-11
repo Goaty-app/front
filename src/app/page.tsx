@@ -13,7 +13,6 @@ export default function Home() {
         setIsFindGoatOpen(true);
     };
 
-    // TODO: Add correct href for eachlink
     return (
         <Containers.Simple className="w-full h-full">
             { !isAuthenticated ?

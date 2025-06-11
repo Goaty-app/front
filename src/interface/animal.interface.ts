@@ -1,7 +1,20 @@
 import {AllType} from "@/interface/allType.interface";
 
+export const mockAnimal: Animal = {
+    id: 1,
+    name: "Simba",
+    herd: {id: 101, name: "Herd Alpha"},
+    idNumber: "ID1001",
+    status: "healthy",
+    animalType: {id: 1, name: "Lion"},
+    originCountry: "Kenya",
+    behaviorNotes: null,
+    gender: "male",
+    birth: "2018-04-23"
+};
+
 export interface Animal {
-    id: string;
+    id: number;
     name: string | null;
     herd: AllType,
     idNumber: string,
@@ -27,36 +40,36 @@ export interface UpdateOrCreateAnimal {
 
 export const mockAnimals: Animal[] = [
     {
-        id: "a1",
+        id: 1,
         name: "Simba",
-        herd: { id: 101, name: "Herd Alpha" },
+        herd: {id: 101, name: "Herd Alpha"},
         idNumber: "ID1001",
         status: "healthy",
-        animalType: { id: 1, name: "Lion" },
+        animalType: {id: 1, name: "Lion"},
         behaviorNotes: "Calm and friendly",
         originCountry: "Kenya",
         gender: "male",
         birth: "2018-04-23"
     },
     {
-        id: "a2",
+        id: 2,
         name: "Nala",
-        herd: { id: 101 , name: "Herd Alpha" },
+        herd: {id: 101, name: "Herd Alpha"},
         idNumber: "ID1002",
         status: "healthy",
-        animalType: { id: 1, name: "Lion" },
+        animalType: {id: 1, name: "Lion"},
         behaviorNotes: null,
         originCountry: "Kenya",
         gender: "female",
         birth: "2019-07-15"
     },
     {
-        id: "a3",
+        id: 2,
         name: "Dumbo",
-        herd: { id: 102, name: "Herd Beta" },
+        herd: {id: 102, name: "Herd Beta"},
         idNumber: "ID2001",
         status: "injured",
-        animalType: { id: 2, name: "Elephant" },
+        animalType: {id: 2, name: "Elephant"},
         behaviorNotes: "Needs vet check",
         originCountry: "India",
         gender: "male",

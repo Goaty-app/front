@@ -62,8 +62,8 @@ const AuthModal: React.FC<ModalProps> = ({open, onOpenChange}) => {
     return (
         <Dialog.Root open={open} onOpenChange={onOpenChange}>
             <Dialog.Portal>
-                <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm"/>
-                <Dialog.Content className="modal-center w-[90%] max-w-md p-6 bg-layer-2 rounded-2xl shadow-xl">
+                <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm z-5"/>
+                <Dialog.Content className="modal-center w-[90%] max-w-md p-6 bg-layer-2 rounded-2xl shadow-xl z-10">
                     <Containers.Simple className="flex justify-between items-center">
                         <Dialog.Title className="text-2xl font-bold">
                             {isRegisterMode ? 'Inscription' : 'Connexion'}

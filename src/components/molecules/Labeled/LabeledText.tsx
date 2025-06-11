@@ -11,7 +11,7 @@ interface LabeledTextProps {
 
 const LabeledText: React.FC<LabeledTextProps> = ({ label, value, className }) => {
     return (
-        <Containers.Simple className={className}>
+        <Containers.Simple className={'grid grid-cols-[2fr_1fr] ' + className}>
             <Typography.Text className="font-semibold">{label}</Typography.Text>
             <Typography.Text>{value}</Typography.Text>
         </Containers.Simple>
