@@ -1,7 +1,34 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { TableCell, TableRow, Tooltip } from "@mui/material";
 
-const ProductionLine = ({ production, ...props }) => {
+interface Herd {
+  id: number;
+  name: string;
+  location: string;
+  createdAt: string;
+}
+interface ProductionType {
+  id: number;
+  name: string;
+}
+interface Production {
+  id: number;
+  production_date: string;
+  expiration_date: string;
+  quantity: number;
+  quantityUnit: string;
+  notes: string;
+  createdAt: string;
+  herd: Herd;
+  productionType: ProductionType;
+}
+
+interface Props {
+  production: Production;
+  children: ReactNode;
+}
+
+const ProductionLine = ({ production, ...props }: Props) => {
   return (
     <TableRow className="bg-row " key={production.id} hover>
       <TableCell>{production.productionType.name}</TableCell>
