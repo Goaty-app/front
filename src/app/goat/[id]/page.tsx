@@ -2,10 +2,10 @@
 
 import { useParams } from 'next/navigation';
 import {Suspense} from "react";
-import {Animal, MockAnimal} from "@/interface/herd.interface";
 import AnimalDetailPage from "@/components/Pages/AnimalDetailPage";
+import {Animal} from "@/interface/animal.interface";
 
-const mockAnimal: MockAnimal = {
+const mockAnimal = {
     id: '1',
     name: 'Haaaa'
 };
