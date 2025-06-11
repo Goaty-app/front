@@ -32,10 +32,14 @@ const AuthModal: React.FC<ModalProps> = ({open, onOpenChange}) => {
                 console.log('Inscription avec', {email, password});
             } else {
                 try {
-                    await import('@/service/auth.service').then(({login}) => login(email, password));
+                    await import('@/service/auth.service').then(({login}) => login({ username: email, password }));
                     onOpenChange?.(false); 
-                } catch (e: any) {
-                    setLoginError('Échec de la connexion. Vérifiez vos identifiants.');
+                } catch (error: unknown) {
+                    let message = 'Échec de la connexion. Vérifiez vos identifiants.';
+                    if (error instanceof Error) {
+                        message = error.message;
+                    }
+                    setLoginError(message);
                 }
             }
         }

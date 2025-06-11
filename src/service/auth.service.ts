@@ -1,4 +1,5 @@
-import { apiFetch } from './api';
+import { httpAuth } from '@/lib/HTTPClient';
+import type { Auth, AuthResponse, RefreshToken } from '@/interface/auth.interface';
 
 const TOKEN_KEY = 'auth_token';
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -20,16 +21,34 @@ export const removeToken = () => {
     }
 };
 
-export const login = async (username: string, password: string) => {
-    const result = await apiFetch(`${API_BASE_URL}/api/login_check`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-    });
-    if (result.data?.token) {
-        setToken(result.data.token);
+export const login = async (auth: Auth) => {
+    try {
+        const response = await httpAuth.post<AuthResponse>('/login_check', auth, {
+            headers: { 'Content-Type': 'application/json' },
+        });
+        if (response.data.token) {
+            setToken(response.data.token);
+        }
+        return { data: response.data, status: response.status };
+    } catch (error: any) {
+        return { error: error.response?.data?.message || error.message || 'Network error', status: error.response?.status || 0 };
     }
-    return result;
+};
+
+export const refreshToken = async (refresh_token: RefreshToken) => {
+    try {
+        const response = await httpAuth.post<AuthResponse>('/token/refresh', refresh_token, {
+            headers: { 'Content-Type': 'application/json' },
+        });
+        if (response.data.token) {
+            setToken(response.data.token);
+        }
+        return { data: response.data, status: response.status };
+    } catch (error: any) {
+        return { error: error.response?.data?.message || error.message || 'Network error', status: error.response?.status || 0 };
+    }
+};
+
+export const logout = () => {
+    removeToken();
 };

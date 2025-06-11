@@ -1,29 +1,34 @@
-// src/service/api/index.ts
+import axios, { AxiosRequestConfig, AxiosError } from 'axios';
 
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   data?: T;
   error?: string;
   status: number;
 }
 
-export async function apiFetch<T = any>(
+export async function apiFetch<T = unknown>(
   url: string,
-  options?: RequestInit
+  options?: AxiosRequestConfig
 ): Promise<ApiResponse<T>> {
   try {
-    const response = await fetch(url, options);
-    const contentType = response.headers.get('content-type');
-    let data: any = undefined;
-    if (contentType && contentType.includes('application/json')) {
-      data = await response.json();
-    } else {
-      data = await response.text();
+    const response = await axios({
+      url,
+      ...options,
+    });
+    return { data: response.data as T, status: response.status };
+  } catch (error) {
+    let errorMsg = 'Network error';
+    let status = 0;
+    if (axios.isAxiosError(error)) {
+      status = error.response?.status ?? 0;
+      if (typeof error.response?.data === 'object' && error.response?.data !== null && 'message' in error.response.data) {
+        errorMsg = (error.response.data as { message: string }).message;
+      } else if (typeof error.response?.data === 'string') {
+        errorMsg = error.response.data;
+      } else if (error.message) {
+        errorMsg = error.message;
+      }
     }
-    if (!response.ok) {
-      return { error: data?.message || data || 'Unknown error', status: response.status };
-    }
-    return { data, status: response.status };
-  } catch (error: any) {
-    return { error: error.message || 'Network error', status: 0 };
+    return { error: errorMsg, status };
   }
 }

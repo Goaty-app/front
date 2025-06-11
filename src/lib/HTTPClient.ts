@@ -1,19 +1,27 @@
 import axios from 'axios';
 import { getToken } from '@/service/auth.service';
 
-const http = axios.create({
-    // TODO: ADD .ENV API
-    baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000/api',
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_VERSION = process.env.NEXT_PUBLIC_API_VERSION;
+
+// Client pour l'authentification (pas de version dans l'URL)
+const httpAuth = axios.create({
+    baseURL: `${API_BASE_URL}`,
 });
 
-http.interceptors.request.use((config) => {
-    const token = getToken();
-    if (typeof window !== 'undefined' && token) {
+// Client pour toutes les routes API versionnées
+const httpApi = axios.create({
+    baseURL: `${API_BASE_URL}${API_VERSION}`,
+});
+
+[httpAuth, httpApi].forEach(client => {
+    client.interceptors.request.use((config) => {
+        const token = getToken();
+        if (typeof window !== 'undefined' && token) {
             config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-}, (error) => {
-    return Promise.reject(error);
+        }
+        return config;
+    }, (error) => Promise.reject(error));
 });
 
-export default http;
+export { httpAuth, httpApi };

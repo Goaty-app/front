@@ -1,5 +1,5 @@
 import {configureStore, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import http from "@/lib/HTTPClient";
+import { httpApi } from "@/lib/HTTPClient";
 
 // TODO: Define every slice
 // TODO: Move slices to their part
@@ -15,7 +15,7 @@ const taskSlice = createSlice({
 });
 
 export const mockPromise = createAsyncThunk("async/mockPromise", async (payload) => {
-    http.get(`http://localhost:3001/api/task/${payload}`)
+    httpApi.get(`/task/${payload}`)
         .then((response) => {
             console.log(response.data);
             return response;
