@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { Animal } from "@/interface/animal.interface";
 import {Btn, Containers, Form, Option, Select} from "@/components/atoms";
-import {LabeledInput} from "@/components/molecules";
 import Label from "@/components/atoms/Typography/label";
+import {Labeled} from "@/components/molecules";
 
 interface AnimalFormProps {
     initialData?: Animal;
@@ -48,35 +48,35 @@ const AnimalForm: React.FC<AnimalFormProps> = ({ initialData, onSubmit }) => {
 
     return (
         <Form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <LabeledInput
+            <Labeled.LabeledInput
                 label="Nom"
                 name="name"
                 value={formState.name}
                 onChange={handleChange}
                 placeholder="Nom"
             />
-            <LabeledInput
+            <Labeled.LabeledInput
                 label="Numéro d'identification"
                 name="idNumber"
                 value={formState.idNumber}
                 onChange={handleChange}
                 placeholder="Ex : 123ABC"
             />
-            <LabeledInput
+            <Labeled.LabeledInput
                 label="Statut"
                 name="status"
                 value={formState.status}
                 onChange={handleChange}
                 placeholder="Ex : actif"
             />
-            <LabeledInput
+            <Labeled.LabeledInput
                 label="Notes comportementales"
                 name="behaviorNotes"
                 value={formState.behaviorNotes}
                 onChange={handleChange}
                 placeholder="Ex : calme, sociable"
             />
-            <LabeledInput
+            <Labeled.LabeledInput
                 label="Pays d'origine"
                 name="originCountry"
                 value={formState.originCountry}
@@ -96,7 +96,7 @@ const AnimalForm: React.FC<AnimalFormProps> = ({ initialData, onSubmit }) => {
                     <Option value="female">Femelle</Option>
                 </Select>
             </Containers.Simple>
-            <LabeledInput
+            <Labeled.LabeledInput
                 label="Date de naissance"
                 name="birth"
                 type="date"

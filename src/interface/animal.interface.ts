@@ -7,8 +7,8 @@ export const mockAnimal: Animal = {
     idNumber: "ID1001",
     status: "healthy",
     animalType: {id: 1, name: "Lion"},
-    behaviorNotes: "Calm and friendly",
     originCountry: "Kenya",
+    behaviorNotes: null,
     gender: "male",
     birth: "2018-04-23"
 };

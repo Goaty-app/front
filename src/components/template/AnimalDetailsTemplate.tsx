@@ -1,6 +1,5 @@
-import {AnimalDetails} from "@/components/Organismes";
+import {AnimalDetails, LogicBtn} from "@/components/Organismes";
 import {Divider} from "@mui/material";
-import {LogicBtn} from "@/components/molecules";
 import {Containers} from "@/components/atoms";
 import React from "react";
 import {Animal} from "@/interface/animal.interface";

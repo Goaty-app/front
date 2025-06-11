@@ -1,17 +1,21 @@
-import React from "react";
+import React from 'react';
 
-interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
     className?: string;
-    children: React.ReactNode
 }
 
-const TextArea: React.FC<TextAreaProps> = ({ className = "", ...children }) => {
-    return (
-        <textarea
-            className={`p-2 border rounded resize-none focus:outline-none focus:ring-2 focus:ring-primary ${className}`}
-            {...children}
-        />
-    );
-};
+const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
+    ({ className = '', ...props }, ref) => {
+        return (
+            <textarea
+                ref={ref}
+                className={`w-full p-2 rounded border bg-layer-1 ${className}`}
+                {...props}
+            />
+        );
+    }
+);
+
+TextArea.displayName = 'TextArea';
 
 export default TextArea;
