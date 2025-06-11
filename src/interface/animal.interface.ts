@@ -1,7 +1,22 @@
 import {AllType} from "@/interface/allType.interface";
 
+export const mockAnimalType: Array<AllType> = [
+    {
+        id: 0,
+        name: 'Demon'
+    },
+    {
+        id: 1,
+        name: 'Lapin'
+    },
+    {
+        id: 12,
+        name: 'FUUUUUUUUCK'
+    },
+]
+
 export interface Animal {
-    id: string;
+    id: number;
     name: string | null;
     herd: AllType,
     idNumber: string,
@@ -27,7 +42,7 @@ export interface UpdateOrCreateAnimal {
 
 export const mockAnimals: Animal[] = [
     {
-        id: "a1",
+        id: 1,
         name: "Simba",
         herd: { id: 101, name: "Herd Alpha" },
         idNumber: "ID1001",
@@ -39,7 +54,7 @@ export const mockAnimals: Animal[] = [
         birth: "2018-04-23"
     },
     {
-        id: "a2",
+        id: 2,
         name: "Nala",
         herd: { id: 101 , name: "Herd Alpha" },
         idNumber: "ID1002",
@@ -51,7 +66,7 @@ export const mockAnimals: Animal[] = [
         birth: "2019-07-15"
     },
     {
-        id: "a3",
+        id: 2,
         name: "Dumbo",
         herd: { id: 102, name: "Herd Beta" },
         idNumber: "ID2001",

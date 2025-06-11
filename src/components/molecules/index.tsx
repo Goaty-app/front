@@ -28,6 +28,8 @@ import LabeledText from './LabeledText';
 import EditAnimal from "@/components/molecules/Btns/EditAnimal";
 import AddHealthcare from "@/components/molecules/Btns/AddHealthcare";
 
+import LabeledInput from "./LabeledInput";
+
 const Navigation = {
   AccordionSection,
   HerdSubSection,
@@ -57,4 +59,4 @@ const Icons = {
   },
 };
 
-export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, LabeledText, LogicBtn };
+export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, LabeledText, LabeledInput, LogicBtn };
