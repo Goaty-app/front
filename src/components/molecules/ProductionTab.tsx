@@ -1,5 +1,6 @@
-import { Production } from "../atoms";
-import { ProductionInterface } from "@/interface/production.interface";
+import {Production} from "../atoms";
+import {ProductionInterface} from "@/interface/production.interface";
+import {QuantityUnit} from "@/enum/quantityUnit.enum";
 
 export const mockProductions: ProductionInterface[] = [
   {
@@ -7,7 +8,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-22T00:00:00+00:00",
     expirationDate: "2025-06-22T00:00:00+00:00",
     quantity: 20.3,
-    quantityUnit: "Kilos",
+    quantityUnit: QuantityUnit.KILOGRAM,
     notes: "Je suis une petite note",
     herd: {
       id: 1,
@@ -23,7 +24,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-20T00:00:00+00:00",
     expirationDate: "2025-06-20T00:00:00+00:00",
     quantity: 15.5,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.KILOGRAM,
     notes: "Une note sur la production de lait",
     herd: {
       id: 2,
@@ -39,7 +40,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-18T00:00:00+00:00",
     expirationDate: "2025-06-18T00:00:00+00:00",
     quantity: 50,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.OUNCE,
     notes: "Récolte spéciale de printemps",
     herd: {
       id: 3,
@@ -55,7 +56,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-15T00:00:00+00:00",
     expirationDate: "2025-06-15T00:00:00+00:00",
     quantity: 10,
-    quantityUnit: "Kilos",
+    quantityUnit: QuantityUnit.UNIT,
     notes: "Petite production artisanale",
     herd: {
       id: 4,
@@ -71,7 +72,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-10T00:00:00+00:00",
     expirationDate: "2025-06-10T00:00:00+00:00",
     quantity: 35,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.KILOGRAM,
     notes: "Production exceptionnelle",
     herd: {
       id: 5,

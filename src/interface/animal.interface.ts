@@ -1,4 +1,5 @@
 import {AllType} from "@/interface/allType.interface";
+import {Country} from "@/enum/country.enum";
 
 export const mockAnimal: Animal = {
     id: 1,
@@ -7,7 +8,7 @@ export const mockAnimal: Animal = {
     idNumber: "ID1001",
     status: "healthy",
     animalType: {id: 1, name: "Lion"},
-    originCountry: "Kenya",
+    originCountry: Country.AFGHANISTAN,
     behaviorNotes: null,
     gender: "male",
     birth: "2018-04-23"
@@ -21,7 +22,7 @@ export interface Animal {
     status: string,
     animalType: AllType,
     behaviorNotes: string | null,
-    originCountry: string,
+    originCountry: Country,
     gender: "male" | "female",
     birth: null | string
 }
@@ -34,7 +35,7 @@ export interface UpdateOrCreateAnimal {
     animalTypeId: number,
     name?: string,
     behaviorNotes?: string,
-    originCountry?: string,
+    originCountry?: Country,
     gender?: 'male' | 'female',
 }
 
@@ -47,7 +48,7 @@ export const mockAnimals: Animal[] = [
         status: "healthy",
         animalType: {id: 1, name: "Lion"},
         behaviorNotes: "Calm and friendly",
-        originCountry: "Kenya",
+        originCountry: Country.ALBANIA,
         gender: "male",
         birth: "2018-04-23"
     },
@@ -59,7 +60,7 @@ export const mockAnimals: Animal[] = [
         status: "healthy",
         animalType: {id: 1, name: "Lion"},
         behaviorNotes: null,
-        originCountry: "Kenya",
+        originCountry: Country.ANTARCTICA,
         gender: "female",
         birth: "2019-07-15"
     },
@@ -71,7 +72,7 @@ export const mockAnimals: Animal[] = [
         status: "injured",
         animalType: {id: 2, name: "Elephant"},
         behaviorNotes: "Needs vet check",
-        originCountry: "India",
+        originCountry: Country.ALBANIA,
         gender: "male",
         birth: null
     }
