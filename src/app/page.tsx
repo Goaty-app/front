@@ -21,7 +21,7 @@ export default function Home() {
                     <Cards.CardBtn onClick={handleOpenFindGoat} color={'orange'} title={'Chèvre'} description={'Trouver une chèvre.'}/>
                     <Cards.CardLink href={'/care'} color={'blue'} title={'Soin'} description={'Ajouter un soin.'}/>
                     <Cards.CardLink href={'/production'} color={'green'} title={'Production'} description={'Observer la production de votre élevage !'}/>
-                    <Cards.CardLink href={'/herd/feae'} color={'yellow'} title={'Troupeau'} description={'Gérer vos troupeaux ici !'}/>
+                    <Cards.CardLink href={'/birth'} color={'yellow'} title={'Naissance'} description={'Gérer vos naissances ici !'}/>
                 </Containers.Simple>
                 :
                 <Typography.Text className="flex h-full justify-center items-center">
