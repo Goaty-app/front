@@ -2,7 +2,6 @@ import { httpAuth } from '@/lib/HTTPClient';
 import type { Auth, AuthResponse, RefreshToken } from '@/interface/auth.interface';
 
 const TOKEN_KEY = 'auth_token';
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const getToken = () => {
     if (typeof window === 'undefined') return null;
@@ -30,8 +29,8 @@ export const login = async (auth: Auth) => {
             setToken(response.data.token);
         }
         return { data: response.data, status: response.status };
-    } catch (error: any) {
-        return { error: error.response?.data?.message || error.message || 'Network error', status: error.response?.status || 0 };
+    } catch (error) {
+        return { error: (error as any).response?.data?.message || (error as Error).message || 'Network error', status: (error as any).response?.status || 0 };
     }
 };
 
@@ -44,8 +43,8 @@ export const refreshToken = async (refresh_token: RefreshToken) => {
             setToken(response.data.token);
         }
         return { data: response.data, status: response.status };
-    } catch (error: any) {
-        return { error: error.response?.data?.message || error.message || 'Network error', status: error.response?.status || 0 };
+    } catch (error) {
+        return { error: (error as any).response?.data?.message || (error as Error).message || 'Network error', status: (error as any).response?.status || 0 };
     }
 };
 
