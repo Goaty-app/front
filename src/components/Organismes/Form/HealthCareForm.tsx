@@ -1,8 +1,8 @@
 'use client';
 
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {Animal, mockAnimals} from "@/interface/animal.interface";
-import {Btn, Form, Option, Select, Typography} from "@/components/atoms";
+import {Btn, Form, Option, Select} from "@/components/atoms";
 import {Labeled} from "@/components/molecules";
 import {CreateHealthcare} from "@/interface/healthcare.interface";
 
@@ -17,16 +17,9 @@ const HealthCareForm: React.FC<HealthCareFormProps> = ({onSubmit}) => {
     });
 
     const [animalSelectedID, setAnimalSelectedID] = useState<number>(mockAnimals[0].id);
-    const [errorNoType, setErrorNoType] = useState<boolean>(false);
 
     const mockAnimalFromStore: Array<Animal> = mockAnimals;
-    const mockHealthCareTypeIds: Array<number> = [0, 1, 2]; // TODO: à remplacer par données du store
 
-    useEffect(() => {
-        if (!mockHealthCareTypeIds || mockHealthCareTypeIds.length === 0) {
-            setErrorNoType(true);
-        }
-    }, []);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -46,19 +39,13 @@ const HealthCareForm: React.FC<HealthCareFormProps> = ({onSubmit}) => {
 
     return (
         <Form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            {!errorNoType ? (
-                <Labeled.LabeledInput
-                    label="Type de soin"
-                    name="healthcareTypeId"
-                    value={formState.healthcareTypeId}
-                    onChange={handleChange}
-                    placeholder="ID du type de soin"
-                />
-            ) : (
-                <Typography.Text>
-                    Vous n'avez créé aucun type de soin. Veuillez en créer au moins un.
-                </Typography.Text>
-            )}
+            <Labeled.LabeledInput
+                label="Type de soin"
+                name="healthcareTypeId"
+                value={formState.healthcareTypeId}
+                onChange={handleChange}
+                placeholder="ID du type de soin"
+            />
 
             <Labeled.LabeledTextArea
                 label="Description"
