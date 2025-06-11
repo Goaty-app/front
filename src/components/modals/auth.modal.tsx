@@ -15,6 +15,7 @@ const AuthModal: React.FC<ModalProps> = ({open, onOpenChange}) => {
     const [password, setPassword] = useState('');
     const [errorMail, setErrorMail] = useState('');
     const [errorPwd, setErrorPwd] = useState('');
+    const [loginError, setLoginError] = useState('');
 
     function isEmailValid() {
         return EMAIL_REGEX.test(email);
@@ -24,13 +25,22 @@ const AuthModal: React.FC<ModalProps> = ({open, onOpenChange}) => {
         return password.length >= 6;
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (isEmailValid() && isPwdValid()) {
-            // TODO: Add call API
+            setLoginError('');
             if (isRegisterMode) {
                 console.log('Inscription avec', {email, password});
             } else {
-                console.log('Connexion avec', {email, password});
+                try {
+                    await import('@/service/auth.service').then(({login}) => login({ username: email, password }));
+                    onOpenChange?.(false); 
+                } catch (error: unknown) {
+                    let message = 'Échec de la connexion. Vérifiez vos identifiants.';
+                    if (error instanceof Error) {
+                        message = error.message;
+                    }
+                    setLoginError(message);
+                }
             }
         }
     };
@@ -95,6 +105,7 @@ const AuthModal: React.FC<ModalProps> = ({open, onOpenChange}) => {
                         />
 
                         {errorPwd && <Typography.Text className="warning-text text-sm">{errorPwd}</Typography.Text>}
+                        {loginError && <Typography.Text className="warning-text text-sm">{loginError}</Typography.Text>}
 
                         <Btn onClick={handleSubmit} variant="accent" className="w-full py-2 rounded mt-8">
                             {isRegisterMode ? "S'inscrire" : 'Se connecter'}
