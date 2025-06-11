@@ -1,5 +1,5 @@
 export interface Auth {
-    email: string,
+    username: string,
     password: string,
 }
 
@@ -7,4 +7,6 @@ export interface AuthResponse {
     token: string,
     refresh_token: string;
 }
+
+export type RefreshToken = Pick<AuthResponse, "refresh_token">;
 

@@ -2,20 +2,21 @@
 
 import React from 'react';
 import {Containers, Typography } from '@/components/atoms';
-import {Goat, Herd} from "@/interface/herd.interface";
+import {Herd} from "@/interface/herd.interface";
 import TableFilter from "@/components/molecules/AnimalTable/TableFilter";
 import AnimalTable from "@/components/molecules/AnimalTable/AnimalTable";
+import {Animal} from "@/interface/animal.interface";
 
 interface Props {
     herds: Herd[];
-    goats: Goat[];
+    animals: Animal[];
     name: string;
     herd: string;
     onNameChange: (value: string) => void;
     onHerdChange: (value: string) => void;
 }
 
-const SearchAnimal: React.FC<Props> = ({ herds, goats, name, herd, onNameChange, onHerdChange }) => (
+const SearchAnimal: React.FC<Props> = ({ herds, animals, name, herd, onNameChange, onHerdChange }) => (
     <>
         <TableFilter
             name={name}
@@ -25,9 +26,9 @@ const SearchAnimal: React.FC<Props> = ({ herds, goats, name, herd, onNameChange,
             onHerdChangeAction={onHerdChange}
         />
         <Containers.Simple className="w-[80%] max-h-full overflow-y-auto">
-            <AnimalTable goats={goats} />
+            <AnimalTable animals={animals} />
         </Containers.Simple>
-        {goats.length === 0 && (
+        {animals.length === 0 && (
             <Typography.Text>Aucune chèvre ne correspond à votre recherche.</Typography.Text>
         )}
     </>

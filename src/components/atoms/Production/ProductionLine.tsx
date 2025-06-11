@@ -1,7 +1,7 @@
 import React from "react";
-import {Production} from "@/interface/production.interface";
+import { ProductionInterface } from "@/interface/production.interface";
 
-const ProductionLine: React.FC<{children: React.ReactNode, production: Production}> = ({ production, ...props }) => {
+const ProductionLine: React.FC<{children: React.ReactNode, production: ProductionInterface}> = ({ production, ...props }) => {
   return (
     <div className="border m-2 rounded">
       <div>
@@ -10,12 +10,12 @@ const ProductionLine: React.FC<{children: React.ReactNode, production: Productio
           {production.quantity} {production.quantityUnit}
         </p>
         <p>
-          Herd: {production.herd.name} ({production.herd.location})
+          Herd: {production.herd.name} ({production.herd.id})
         </p>
-        <p className="truncate" title={production.notes}>
+        <p className="truncate">
           Notes: {production.notes}
         </p>
-        <p>Date: {new Date(production.production_date).toLocaleDateString()}</p>
+        <p>Date: {new Date(production.productionDate).toLocaleDateString()}</p>
       </div>
       <div>{props.children}</div>
     </div>
