@@ -5,7 +5,7 @@ import {Animal} from "@/interface/animal.interface";
 
 // TODO: Adapt to Interface
 
-const AnimalMainContent: React.FC<Animal> = (animal) => {
+const AnimalMainContent: React.FC<{ animal: Animal }> = ({animal}) => {
     return (
         <Containers.Simple className="flex flex-col gap-4">
             <Typography.Title> Fiche Animal </Typography.Title>

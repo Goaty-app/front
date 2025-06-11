@@ -1,24 +1,12 @@
 import {AllType} from "@/interface/allType.interface";
-import {ForeignKey} from "@/interface/utils.interface";
 
-export interface Production {
+export interface ProductionInterface {
     id: number,
     productionDate: string,
     expirationDate: string,
     quantity: number,
     quantityUnit: string,
     notes: string | null,
-    herd: ForeignKey,
+    herd: AllType,
     productionType: AllType
-}
-export interface MockHerdFromId {
-    id: number,
-    name: string,
-    location: string,
-    createdAt: string
-}
-
-export interface ProductionType {
-    id: number,
-    name: string
 }
