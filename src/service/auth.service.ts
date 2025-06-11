@@ -29,8 +29,12 @@ export const login = async (auth: Auth) => {
             setToken(response.data.token);
         }
         return { data: response.data, status: response.status };
-    } catch (error) {
-        return { error: (error as any).response?.data?.message || (error as Error).message || 'Network error', status: (error as any).response?.status || 0 };
+    } catch (error: unknown) {
+        if (error && typeof error === 'object' && 'response' in error) {
+            const err = error as { response?: { data?: { message?: string }, status?: number }, message?: string };
+            return { error: err.response?.data?.message || err.message || 'Network error', status: err.response?.status || 0 };
+        }
+        return { error: 'Network error', status: 0 };
     }
 };
 
@@ -43,8 +47,12 @@ export const refreshToken = async (refresh_token: RefreshToken) => {
             setToken(response.data.token);
         }
         return { data: response.data, status: response.status };
-    } catch (error) {
-        return { error: (error as any).response?.data?.message || (error as Error).message || 'Network error', status: (error as any).response?.status || 0 };
+    } catch (error: unknown) {
+        if (error && typeof error === 'object' && 'response' in error) {
+            const err = error as { response?: { data?: { message?: string }, status?: number }, message?: string };
+            return { error: err.response?.data?.message || err.message || 'Network error', status: err.response?.status || 0 };
+        }
+        return { error: 'Network error', status: 0 };
     }
 };
 
