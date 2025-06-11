@@ -5,6 +5,7 @@ import CardBtn from "@/components/molecules/Card/cardsBtn";
 // TABLE
 import TableFilter from "./AnimalTable/TableFilter";
 import AnimalTable from "./AnimalTable/AnimalTable";
+import TableFilterProduction from "./ProductionTable/TableFilterProduction";
 
 // ICONS
 import ThemeIcon from "./Icons/ThemeIcon";
@@ -20,9 +21,9 @@ import HerdSubSection from "./Navigation/HerdSubSection";
 import GoatGroup from "./GoatGroup";
 
 // PRODUCTION
-import ProductionTab from "./ProductionTab";
+import ProductionTab from "./ProductionTable/ProductionTab";
 
-import LabeledText from './LabeledText';
+import LabeledText from "./LabeledText";
 
 // BTN
 import EditAnimal from "@/components/molecules/Btns/EditAnimal";
@@ -36,12 +37,13 @@ const Navigation = {
 const LogicBtn = {
   EditAnimal,
   AddHealthcare,
-}
+};
 
 const Table = {
   AnimalTable,
   TableFilter,
-}
+  TableFilterProduction,
+};
 
 const Cards = {
   CardLink,
@@ -57,4 +59,13 @@ const Icons = {
   },
 };
 
-export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, LabeledText, LogicBtn };
+export {
+  ProductionTab,
+  GoatGroup,
+  Cards,
+  Icons,
+  Navigation,
+  Table,
+  LabeledText,
+  LogicBtn,
+};

@@ -8,22 +8,19 @@ const ProductionLine: React.FC<{
 }> = ({ production, children }) => {
   return (
     <TableRow className="bg-row " key={production.id} hover>
+      <TableCell>{production.herd.id}</TableCell>
       <TableCell>{production.productionType.name}</TableCell>
       <TableCell>
         {production.quantity} {production.quantityUnit}
       </TableCell>
+      <TableCell>{production.herd.name}</TableCell>
       <TableCell>
-        Herd: {production.herd.name} ({production.herd.id})
-      </TableCell>
-      <TableCell className={""}>
         <Tooltip title={production.notes}>
-          <p className="w-100 truncate text-ellipsis">
-            Notes: {production.notes}
-          </p>
+          <p className="w-100 truncate text-ellipsis">{production.notes}</p>
         </Tooltip>
       </TableCell>
       <TableCell>
-        Date: {new Date(production.productionDate).toLocaleDateString()}
+        {new Date(production.productionDate).toLocaleDateString()}
       </TableCell>
       <TableCell>{children}</TableCell>
     </TableRow>

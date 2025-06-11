@@ -1,46 +1,49 @@
 .btn {
-    padding: 0.5rem;
-    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    border-radius: 1rem;
+  padding: 0.5rem;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  border-radius: 1rem;
 }
 
 .btn:disabled {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 /* === PRIMARY === */
 .btn-primary {
-    background-color: var(--btn-primary-bg);
-    border: 1px solid var(--btn-primary-border);
+  background-color: var(--btn-primary-bg);
+  border: 1px solid var(--btn-primary-border);
 }
 
 .btn-primary:hover {
-    background-color: var(--btn-primary-bg-hover);
-    border-color: var(--btn-primary-border-hover);
-    box-shadow: var(--btn-primary-shadow);
+  background-color: var(--btn-primary-bg-hover);
+  border-color: var(--btn-primary-border-hover);
+  box-shadow: var(--btn-primary-shadow);
 }
 
 /* === ACCENT === */
 .btn-accent {
-    color: var(--light-text);
-    background-color: var(--btn-accent-bg);
-    border: 1px solid var(--btn-accent-border);
+  color: var(--light-text);
+  background-color: var(--btn-accent-bg);
+  border: 1px solid var(--btn-accent-border);
 }
 
 .btn-accent:hover {
-    background-color: var(--btn-accent-bg-hover);
-    border-color: var(--btn-accent-border-hover);
-    box-shadow: var(--btn-accent-shadow);
+  background-color: var(--btn-accent-bg-hover);
+  border-color: var(--btn-accent-border-hover);
+  box-shadow: var(--btn-accent-shadow);
 }
 
 /* === WARNING === */
 .btn-warning {
-    background-color: var(--btn-warning-bg);
-    border: 1px solid var(--btn-warning-border);
+  background-color: var(--btn-warning-bg);
+  border: 1px solid var(--btn-warning-border);
 }
 
 .btn-warning:hover {
-    background-color: var(--btn-warning-bg-hover);
-    border-color: var(--btn-warning-border-hover);
-    box-shadow: var(--btn-warning-shadow);
+  background-color: var(--btn-warning-bg-hover);
+  border-color: var(--btn-warning-border-hover);
+  box-shadow: var(--btn-warning-shadow);
 }

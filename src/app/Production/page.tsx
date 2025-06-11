@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Btn } from "@/components/atoms";
-import { ProductionTab } from "@/components/molecules";
+import SearchProductionPage from "@/components/Pages/SearchProductionPage";
 
 export default function Home() {
   const [mode, setMode] = useState("");
@@ -13,9 +13,9 @@ export default function Home() {
         return <div>Hello mode Analyse</div>;
       case "Gestion":
         return (
-          <div>
-            <ProductionTab />
-          </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <SearchProductionPage />
+          </Suspense>
         );
       default:
         return <div>Choisir entre Analyse et gestion</div>;

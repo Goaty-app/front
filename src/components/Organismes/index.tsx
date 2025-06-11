@@ -6,13 +6,22 @@ import AppIcon from "./AppIcon";
 // SEARCH TABLE
 import SearchAnimal from "./SearchTable/SearchAnimal";
 import AnimalMainContent from "@/components/Organismes/AnimalDetails/AnimalMainContent";
+import SearchProduction from "@/components/Organismes/SearchTable/SearchProduction";
 
 const SearchTable = {
-    SearchAnimal,
-}
+  SearchAnimal,
+  SearchProduction,
+};
 
 const AnimalDetails = {
-    AnimalMainContent,
-}
+  AnimalMainContent,
+};
 
-export { HerdNavigationSection, RightSide, Loader, AppIcon, SearchTable, AnimalDetails };
+export {
+  HerdNavigationSection,
+  RightSide,
+  Loader,
+  AppIcon,
+  SearchTable,
+  AnimalDetails,
+};
