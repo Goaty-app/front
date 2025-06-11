@@ -3,12 +3,8 @@
 import { useParams } from 'next/navigation';
 import {Suspense} from "react";
 import AnimalDetailPage from "@/components/Pages/AnimalDetailPage";
-import {Animal} from "@/interface/animal.interface";
+import {mockAnimal} from "@/interface/animal.interface";
 
-const mockAnimal = {
-    id: '1',
-    name: 'Haaaa'
-};
 
 export default function Page() {
     const { id } = useParams();
@@ -17,7 +13,7 @@ export default function Page() {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <AnimalDetailPage animal={mockAnimal as Animal}/>
+            <AnimalDetailPage animal={mockAnimal}/>
         </Suspense>
     );
 }

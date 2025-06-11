@@ -1,19 +1,17 @@
 import {AllType} from "@/interface/allType.interface";
 
-export const mockAnimalType: Array<AllType> = [
-    {
-        id: 0,
-        name: 'Demon'
-    },
-    {
-        id: 1,
-        name: 'Lapin'
-    },
-    {
-        id: 12,
-        name: 'FUUUUUUUUCK'
-    },
-]
+export const mockAnimal: Animal = {
+    id: 1,
+    name: "Simba",
+    herd: {id: 101, name: "Herd Alpha"},
+    idNumber: "ID1001",
+    status: "healthy",
+    animalType: {id: 1, name: "Lion"},
+    behaviorNotes: "Calm and friendly",
+    originCountry: "Kenya",
+    gender: "male",
+    birth: "2018-04-23"
+};
 
 export interface Animal {
     id: number;
@@ -44,10 +42,10 @@ export const mockAnimals: Animal[] = [
     {
         id: 1,
         name: "Simba",
-        herd: { id: 101, name: "Herd Alpha" },
+        herd: {id: 101, name: "Herd Alpha"},
         idNumber: "ID1001",
         status: "healthy",
-        animalType: { id: 1, name: "Lion" },
+        animalType: {id: 1, name: "Lion"},
         behaviorNotes: "Calm and friendly",
         originCountry: "Kenya",
         gender: "male",
@@ -56,10 +54,10 @@ export const mockAnimals: Animal[] = [
     {
         id: 2,
         name: "Nala",
-        herd: { id: 101 , name: "Herd Alpha" },
+        herd: {id: 101, name: "Herd Alpha"},
         idNumber: "ID1002",
         status: "healthy",
-        animalType: { id: 1, name: "Lion" },
+        animalType: {id: 1, name: "Lion"},
         behaviorNotes: null,
         originCountry: "Kenya",
         gender: "female",
@@ -68,10 +66,10 @@ export const mockAnimals: Animal[] = [
     {
         id: 2,
         name: "Dumbo",
-        herd: { id: 102, name: "Herd Beta" },
+        herd: {id: 102, name: "Herd Beta"},
         idNumber: "ID2001",
         status: "injured",
-        animalType: { id: 2, name: "Elephant" },
+        animalType: {id: 2, name: "Elephant"},
         behaviorNotes: "Needs vet check",
         originCountry: "India",
         gender: "male",
