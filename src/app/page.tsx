@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <Containers.Simple className="w-full h-full">
-      {!isAuthenticated ? (
+      {isAuthenticated ? (
         <Containers.Simple className="flex flex-col sm:flex-row gap-8 h-full p-4">
           <Cards.CardBtn
             onClick={handleOpenFindGoat}

@@ -7,6 +7,7 @@ import { EMAIL_REGEX } from "@/utils/regex";
 import { Btn, Containers, Input, Typography } from "@/components/atoms";
 import { Description } from "@radix-ui/react-dialog";
 import { ModalProps } from "@/interface/modal.interface";
+import { useAuth } from "@/context/authContext";
 
 const AuthModal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
   const [isRegisterMode, setIsRegisterMode] = useState(false);
@@ -15,6 +16,7 @@ const AuthModal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
   const [errorMail, setErrorMail] = useState("");
   const [errorPwd, setErrorPwd] = useState("");
   const [loginError, setLoginError] = useState("");
+  const { saveToken } = useAuth();
 
   function isEmailValid() {
     return EMAIL_REGEX.test(email);
@@ -31,10 +33,14 @@ const AuthModal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
         console.log("Inscription avec", { email, password });
       } else {
         try {
-          await import("@/service/auth.service").then(({ login }) =>
-            login({ username: email, password }),
-          );
-          onOpenChange?.(false);
+          const { login } = await import("@/service/auth.service");
+          const result = await login({ username: email, password });
+          if (result.data?.token) {
+            saveToken(result.data.token);
+            onOpenChange?.(false);
+          } else {
+            setLoginError("Échec de la connexion. Vérifiez vos identifiants.");
+          }
         } catch (error: unknown) {
           let message = "Échec de la connexion. Vérifiez vos identifiants.";
           if (error instanceof Error) {
