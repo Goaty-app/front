@@ -24,4 +24,6 @@ const LogicBtn = {
     AddHealthcare,
 }
 
+
+
 export { HerdNavigationSection, RightSide, Loader, AppIcon, SearchTable, AnimalDetails, LogicBtn };
