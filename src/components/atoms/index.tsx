@@ -21,15 +21,13 @@ import Grass from "./Grass/Grass";
 import ImageGoat from "./Goat/ImageGoat";
 
 // PRODUCTION
-import ProductionLine from "@/components/atoms/Production/ProductionLine";
-import CrudProductionButton from "@/components/atoms/Production/CrudProductionButton";
-
+import ProductionLine from "./Production/ProductionLine";
 // SELECT
 import Select from "./Containers/select";
 import Option from "./option";
 import Form from "./form";
 
-const Production = { ProductionLine, CrudProductionButton };
+const Production = { ProductionLine };
 const Loader = { Grass, ImageGoat };
 const Typography = { Title, Text, Label, TextArea };
 const Containers = { Nav, Simple, Header, Main, Aside };

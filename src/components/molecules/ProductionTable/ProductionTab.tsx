@@ -12,6 +12,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import CrudProductionIcon from "@/components/molecules/Icons/CrudProductionIcon";
 
 interface Props {
   productionList: ProductionInterface[];
@@ -44,21 +45,21 @@ const ProductionTab: React.FC<Props> = ({ productionList }) => {
               <Typography.Text className="dark-text">Date</Typography.Text>
             </TableCell>
             <TableCell className="bg-header">
-              <Production.CrudProductionButton action={"create"} />
+              <CrudProductionIcon action={"create"} />
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {productionList.map((prod) => (
             <Production.ProductionLine key={prod.id} production={prod}>
-              <Production.CrudProductionButton
+              <CrudProductionIcon
                 action={"update"}
                 productionId={prod.id}
-              ></Production.CrudProductionButton>
-              <Production.CrudProductionButton
+              ></CrudProductionIcon>
+              <CrudProductionIcon
                 action={"delete"}
                 productionId={prod.id}
-              ></Production.CrudProductionButton>
+              ></CrudProductionIcon>
             </Production.ProductionLine>
           ))}
         </TableBody>
