@@ -58,4 +58,4 @@ const Labeled = {
   LabeledTextArea,
 };
 
-export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, LabeledText, LogicBtn, Labeled };
+export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, LabeledText, Labeled };
