@@ -7,7 +7,7 @@ const ProductionLine: React.FC<{
   children: React.ReactNode;
 }> = ({ production, children }) => {
   return (
-    <TableRow className="bg-row " key={production.id} hover>
+    <TableRow className="bg-row" key={production.id} hover>
       <TableCell>{production.herd.id}</TableCell>
       <TableCell>{production.productionType.name}</TableCell>
       <TableCell>
@@ -22,7 +22,7 @@ const ProductionLine: React.FC<{
       <TableCell>
         {new Date(production.productionDate).toLocaleDateString()}
       </TableCell>
-      <TableCell>{children}</TableCell>
+      <TableCell className="!flex !flex-col !gap-2">{children}</TableCell>
     </TableRow>
   );
 };

@@ -20,9 +20,8 @@ const ProductionTab: React.FC<Props> = ({ productionList }) => {
   return (
     <TableContainer
       component={Paper}
-      className="h-full overflow-y-auto border-gray-400 border border-solid"
+      className="border-gray-400 border border-solid"
     >
-      <Production.CrudProductionButton action={"create"} />
       <Table>
         <TableHead>
           <TableRow className="z-10">
@@ -44,7 +43,9 @@ const ProductionTab: React.FC<Props> = ({ productionList }) => {
             <TableCell className="bg-header">
               <Typography.Text className="dark-text">Date</Typography.Text>
             </TableCell>
-            <TableCell className="bg-header"></TableCell>
+            <TableCell className="bg-header">
+              <Production.CrudProductionButton action={"create"} />
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

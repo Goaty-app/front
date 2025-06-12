@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import {Btn} from "@/components/atoms";
 
 type CrudProductionButtonProps =
   | { action: "create" }
@@ -21,12 +22,12 @@ const CrudProductionButton = (props: CrudProductionButtonProps) => {
 
   return (
     <>
-      <button
+      <Btn variant="accent"
+           className="cursor-pointer"
         onClick={() => setOpen(true)}
-        className="px-4 py-2 bg-blue-600 text-white rounded"
       >
         {getLabel()} production
-      </button>
+      </Btn>
 
       {open && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
