@@ -95,4 +95,68 @@ export const mockProductions: ProductionInterface[] = [
       name: "Lait de chamelle",
     },
   },
+  {
+    id: 5,
+    productionDate: "2025-05-10T00:00:00+00:00",
+    expirationDate: "2025-06-10T00:00:00+00:00",
+    quantity: 35,
+    quantityUnit: "Litres",
+    notes: "Production exceptionnelle",
+    herd: {
+      id: 5,
+      name: "Camel",
+    },
+    productionType: {
+      id: 5,
+      name: "Lait de chamelle",
+    },
+  },
+  {
+    id: 5,
+    productionDate: "2025-05-10T00:00:00+00:00",
+    expirationDate: "2025-06-10T00:00:00+00:00",
+    quantity: 35,
+    quantityUnit: "Litres",
+    notes: "Production exceptionnelle",
+    herd: {
+      id: 5,
+      name: "Camel",
+    },
+    productionType: {
+      id: 5,
+      name: "Lait de chamelle",
+    },
+  },
+  {
+    id: 5,
+    productionDate: "2025-05-10T00:00:00+00:00",
+    expirationDate: "2025-06-10T00:00:00+00:00",
+    quantity: 35,
+    quantityUnit: "Litres",
+    notes: "Production exceptionnelle",
+    herd: {
+      id: 5,
+      name: "Camel",
+    },
+    productionType: {
+      id: 5,
+      name: "Lait de chamelle",
+    },
+  },
+  {
+    id: 5,
+    productionDate: "2025-05-10T00:00:00+00:00",
+    expirationDate: "2025-06-10T00:00:00+00:00",
+    quantity: 35,
+    quantityUnit: "Litres",
+    notes: "Production exceptionnelle",
+    herd: {
+      id: 5,
+      name: "Camel",
+    },
+    productionType: {
+      id: 5,
+      name: "Lait de chamelle",
+    },
+  },
 ];
