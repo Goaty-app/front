@@ -1,5 +1,4 @@
 import { AllType } from "@/interface/allType.interface";
-import { AllType } from "@/interface/allType.interface";
 import { QuantityUnit } from "@/enum/quantityUnit.enum";
 
 export interface ProductionInterface {
@@ -19,7 +18,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-22T00:00:00+00:00",
     expirationDate: "2025-06-22T00:00:00+00:00",
     quantity: 20.3,
-    quantityUnit: "Kilos",
+    quantityUnit: QuantityUnit.KILOGRAM,
     notes:
       'Je suis une petite note Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.\n' +
       "\n" +
@@ -38,7 +37,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-20T00:00:00+00:00",
     expirationDate: "2025-06-20T00:00:00+00:00",
     quantity: 15.5,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.UNIT,
     notes: "Une note sur la production de lait",
     herd: {
       id: 2,
@@ -54,7 +53,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-18T00:00:00+00:00",
     expirationDate: "2025-06-18T00:00:00+00:00",
     quantity: 50,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.UNIT,
     notes: "Récolte spéciale de printemps",
     herd: {
       id: 3,
@@ -70,7 +69,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-15T00:00:00+00:00",
     expirationDate: "2025-06-15T00:00:00+00:00",
     quantity: 10,
-    quantityUnit: "Kilos",
+    quantityUnit: QuantityUnit.KILOGRAM,
     notes: "Petite production artisanale",
     herd: {
       id: 4,
@@ -86,7 +85,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-10T00:00:00+00:00",
     expirationDate: "2025-06-10T00:00:00+00:00",
     quantity: 35,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.UNIT,
     notes: "Production exceptionnelle",
     herd: {
       id: 5,
@@ -102,7 +101,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-10T00:00:00+00:00",
     expirationDate: "2025-06-10T00:00:00+00:00",
     quantity: 35,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.UNIT,
     notes: "Production exceptionnelle",
     herd: {
       id: 5,
@@ -118,7 +117,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-10T00:00:00+00:00",
     expirationDate: "2025-06-10T00:00:00+00:00",
     quantity: 35,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.UNIT,
     notes: "Production exceptionnelle",
     herd: {
       id: 5,
@@ -134,7 +133,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-10T00:00:00+00:00",
     expirationDate: "2025-06-10T00:00:00+00:00",
     quantity: 35,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.UNIT,
     notes: "Production exceptionnelle",
     herd: {
       id: 5,
@@ -150,7 +149,7 @@ export const mockProductions: ProductionInterface[] = [
     productionDate: "2025-05-10T00:00:00+00:00",
     expirationDate: "2025-06-10T00:00:00+00:00",
     quantity: 35,
-    quantityUnit: "Litres",
+    quantityUnit: QuantityUnit.UNIT,
     notes: "Production exceptionnelle",
     herd: {
       id: 5,
