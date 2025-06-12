@@ -1,6 +1,6 @@
-import {Production} from "../atoms";
-import {ProductionInterface} from "@/interface/production.interface";
-import {QuantityUnit} from "@/enum/quantityUnit.enum";
+import { Production } from "../atoms";
+import { ProductionInterface } from "@/interface/production.interface";
+import { QuantityUnit } from "@/enum/quantityUnit.enum";
 
 export const mockProductions: ProductionInterface[] = [
   {

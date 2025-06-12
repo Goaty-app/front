@@ -1,15 +1,15 @@
 .bg-blue {
-    background-color: var(--card-bg-blue);
+  background-color: var(--card-bg-blue);
 }
 
 .bg-green {
-    background-color: var(--card-bg-green);
+  background-color: var(--card-bg-green);
 }
 
 .bg-orange {
-    background-color: var(--card-bg-orange);
+  background-color: var(--card-bg-orange);
 }
 
 .bg-yellow {
-    background-color: var(--card-bg-yellow);
+  background-color: var(--card-bg-yellow);
 }

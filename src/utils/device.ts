@@ -1,8 +1,8 @@
-export function getDeviceType(): 'mobile' | 'desktop' {
-    if (typeof window === 'undefined') return 'desktop';
+export function getDeviceType(): "mobile" | "desktop" {
+  if (typeof window === "undefined") return "desktop";
 
-    const width = window.innerWidth;
+  const width = window.innerWidth;
 
-    if (width <= 640) return 'mobile';
-    return 'desktop';
+  if (width <= 640) return "mobile";
+  return "desktop";
 }

@@ -1,16 +1,16 @@
 .icon {
-    color: var(--btn-primary-bg);
+  color: var(--btn-primary-bg);
 }
 
 .icon:hover {
-    color: var(--btn-primary-bg-hover);
-    background-color: var(--main-layer-3);
+  color: var(--btn-primary-bg-hover);
+  background-color: var(--main-layer-3);
 }
 
 .app-icon {
-    background-color: var(--main-layer-1);
+  background-color: var(--main-layer-1);
 }
 
 .app-icon:hover {
-    background-color: var(--main-layer-3);
+  background-color: var(--main-layer-3);
 }

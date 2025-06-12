@@ -1,60 +1,70 @@
-import {configureStore, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {
+  configureStore,
+  createAsyncThunk,
+  createSlice,
+} from "@reduxjs/toolkit";
 import { httpApi } from "@/lib/HTTPClient";
 
 // TODO: Define every slice
 // TODO: Move slices to their part
 const taskSlice = createSlice({
-    name: "task",
-    initialState: [],
-    reducers: {
-        showReducer: (state, action) => {
-            console.log(state);
-            console.log(action.payload);
-        }
-    }
+  name: "task",
+  initialState: [],
+  reducers: {
+    showReducer: (state, action) => {
+      console.log(state);
+      console.log(action.payload);
+    },
+  },
 });
 
-export const mockPromise = createAsyncThunk("async/mockPromise", async (payload) => {
-    httpApi.get(`/task/${payload}`)
-        .then((response) => {
-            console.log(response.data);
-            return response;
-        })
-        .catch(error => {
-            console.log(error);
-            return error.data;
-        })
-});
+export const mockPromise = createAsyncThunk(
+  "async/mockPromise",
+  async (payload) => {
+    httpApi
+      .get(`/task/${payload}`)
+      .then((response) => {
+        console.log(response.data);
+        return response;
+      })
+      .catch((error) => {
+        console.log(error);
+        return error.data;
+      });
+  },
+);
 
 const asyncSlice = createSlice({
-    name: "async",
-    initialState: {
-        async: '',
-        status: "idle",
-        error: '',
-    },
-    reducers: {},
-    extraReducers(builder) {
-        builder
-            .addCase(mockPromise.pending, (state) => {
-                state.status = 'pending';
-            }).addCase(mockPromise.rejected, (state, action) => {
-              state.status = 'error';
-              state.error = action.payload as string;
-            }).addCase(mockPromise.fulfilled, (state, action) => {
-                state.status = 'fulfilled';
-                state.async = action.payload as unknown as string;
-        })
-    }
-})
+  name: "async",
+  initialState: {
+    async: "",
+    status: "idle",
+    error: "",
+  },
+  reducers: {},
+  extraReducers(builder) {
+    builder
+      .addCase(mockPromise.pending, (state) => {
+        state.status = "pending";
+      })
+      .addCase(mockPromise.rejected, (state, action) => {
+        state.status = "error";
+        state.error = action.payload as string;
+      })
+      .addCase(mockPromise.fulfilled, (state, action) => {
+        state.status = "fulfilled";
+        state.async = action.payload as unknown as string;
+      });
+  },
+});
 
-export const {showReducer} = taskSlice.actions;
+export const { showReducer } = taskSlice.actions;
 
 export const store = configureStore({
-    reducer: {
-        task: taskSlice.reducer,
-        async: asyncSlice.reducer,
-    }
+  reducer: {
+    task: taskSlice.reducer,
+    async: asyncSlice.reducer,
+  },
 });
 
 // TYPE
