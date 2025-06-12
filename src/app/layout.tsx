@@ -5,6 +5,12 @@ import { DeviceProvider } from "@/context/deviceContext";
 import { Containers } from "@/components/atoms";
 import React from "react";
 import StoreProvider from "@/store/storeProvider";
+<<<<<<< Updated upstream
+import AppDataLoader from "@/store/appDataLoader";
+=======
+<<<<<<< HEAD
+import { Template } from "@/components/template";
+=======
 import AppDataLoader from "@/store/appDataLoader";
 import { Template } from "@/components/template";
 

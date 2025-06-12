@@ -17,6 +17,7 @@ const Template = {
   HeaderTemplate,
   AnimalDetailsTemplate,
   HealthcareTemplate,
+<<<<<<< Updated upstream
   ProductionSearchTemplate,
   LoadingErrorTemplate,
   LoadingTemplate,
