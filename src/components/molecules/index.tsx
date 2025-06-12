@@ -23,20 +23,14 @@ import GoatGroup from "./GoatGroup";
 // PRODUCTION
 import ProductionTab from "./ProductionTable/ProductionTab";
 
-import LabeledText from "./LabeledText";
-
-// BTN
-import EditAnimal from "@/components/molecules/Btns/EditAnimal";
-import AddHealthcare from "@/components/molecules/Btns/AddHealthcare";
+// LABELED
+import LabeledTextArea from "@/components/molecules/Labeled/LabeledTextArea";
+import LabeledText from "@/components/molecules/Labeled/LabeledText";
+import LabeledInput from "@/components/molecules/Labeled/LabeledInput";
 
 const Navigation = {
   AccordionSection,
   HerdSubSection,
-};
-
-const LogicBtn = {
-  EditAnimal,
-  AddHealthcare,
 };
 
 const Table = {
@@ -58,14 +52,10 @@ const Icons = {
     BurgerIcon,
   },
 };
-
-export {
-  ProductionTab,
-  GoatGroup,
-  Cards,
-  Icons,
-  Navigation,
-  Table,
+const Labeled = {
   LabeledText,
-  LogicBtn,
+  LabeledInput,
+  LabeledTextArea,
 };
+
+export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, LabeledText, LogicBtn, Labeled };

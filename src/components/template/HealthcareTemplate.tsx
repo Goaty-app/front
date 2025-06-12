@@ -1,7 +1,7 @@
 import { Containers, Typography } from "@/components/atoms";
 import { Divider } from "@mui/material";
-import { LogicBtn } from "@/components/molecules";
 import React from "react";
+import { LogicBtn } from "@/components/Organismes";
 
 const HealthcareTemplate: React.FC<{ className?: string }> = ({
   className,

@@ -10,11 +10,7 @@ const AnimalDetailPage: React.FC<{ animal: Animal }> = ({ animal }) => {
         Détails : {animal.name}
       </Typography.Title>
       <Containers.Simple className="flex flex-row gap-6 justify-center items-start w-full">
-        {/* TODO: Remove Cast as Animal */}
-        <Template.AnimalDetailsTemplate
-          animal={animal as Animal}
-          className="w-1/2"
-        />
+        <Template.AnimalDetailsTemplate animal={animal} className="w-1/2" />
         <Template.HealthcareTemplate className="w-1/2" />
       </Containers.Simple>
     </Containers.Simple>

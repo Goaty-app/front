@@ -14,6 +14,7 @@ const AuthModal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
   const [password, setPassword] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [errorPwd, setErrorPwd] = useState("");
+  const [loginError, setLoginError] = useState("");
 
   function isEmailValid() {
     return EMAIL_REGEX.test(email);
@@ -23,13 +24,24 @@ const AuthModal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
     return password.length >= 6;
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (isEmailValid() && isPwdValid()) {
-      // TODO: Add call API
+      setLoginError("");
       if (isRegisterMode) {
         console.log("Inscription avec", { email, password });
       } else {
-        console.log("Connexion avec", { email, password });
+        try {
+          await import("@/service/auth.service").then(({ login }) =>
+            login({ username: email, password }),
+          );
+          onOpenChange?.(false);
+        } catch (error: unknown) {
+          let message = "Échec de la connexion. Vérifiez vos identifiants.";
+          if (error instanceof Error) {
+            message = error.message;
+          }
+          setLoginError(message);
+        }
       }
     }
   };
@@ -63,8 +75,8 @@ const AuthModal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
-        <Dialog.Content className="modal-center w-[90%] max-w-md p-6 bg-layer-2 rounded-2xl shadow-xl">
+        <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm z-5" />
+        <Dialog.Content className="modal-center w-[90%] max-w-md p-6 bg-layer-2 rounded-2xl shadow-xl z-10">
           <Containers.Simple className="flex justify-between items-center">
             <Dialog.Title className="text-2xl font-bold">
               {isRegisterMode ? "Inscription" : "Connexion"}
@@ -102,6 +114,11 @@ const AuthModal: React.FC<ModalProps> = ({ open, onOpenChange }) => {
             {errorPwd && (
               <Typography.Text className="warning-text text-sm">
                 {errorPwd}
+              </Typography.Text>
+            )}
+            {loginError && (
+              <Typography.Text className="warning-text text-sm">
+                {loginError}
               </Typography.Text>
             )}
 

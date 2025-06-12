@@ -8,6 +8,10 @@ import SearchAnimal from "./SearchTable/SearchAnimal";
 import AnimalMainContent from "@/components/Organismes/AnimalDetails/AnimalMainContent";
 import SearchProduction from "@/components/Organismes/SearchTable/SearchProduction";
 
+// BTNS
+import AddHealthcare from "@/components/Organismes/Btns/AddHealthcare";
+import EditAnimal from "@/components/Organismes/Btns/EditAnimal";
+
 const SearchTable = {
   SearchAnimal,
   SearchProduction,
@@ -17,6 +21,11 @@ const AnimalDetails = {
   AnimalMainContent,
 };
 
+const LogicBtn = {
+  EditAnimal,
+  AddHealthcare,
+};
+
 export {
   HerdNavigationSection,
   RightSide,
@@ -24,4 +33,5 @@ export {
   AppIcon,
   SearchTable,
   AnimalDetails,
+  LogicBtn,
 };
