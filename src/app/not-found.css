@@ -1,7 +1,7 @@
 .bg-404 {
-    background-image: url("./../../public/asset/Goaty_404.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    object-fit: cover;
+  background-image: url("./../../public/asset/Goaty_404.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
 }

@@ -12,18 +12,24 @@ import AddHealthcare from "@/components/Organismes/Btns/AddHealthcare";
 import EditAnimal from "@/components/Organismes/Btns/EditAnimal";
 
 const SearchTable = {
-    SearchAnimal,
-}
+  SearchAnimal,
+};
 
 const AnimalDetails = {
-    AnimalMainContent,
-}
+  AnimalMainContent,
+};
 
 const LogicBtn = {
-    EditAnimal,
-    AddHealthcare,
-}
+  EditAnimal,
+  AddHealthcare,
+};
 
-
-
-export { HerdNavigationSection, RightSide, Loader, AppIcon, SearchTable, AnimalDetails, LogicBtn };
+export {
+  HerdNavigationSection,
+  RightSide,
+  Loader,
+  AppIcon,
+  SearchTable,
+  AnimalDetails,
+  LogicBtn,
+};

@@ -1,4 +1,4 @@
-import NavigationTemplate from './navigation';
+import NavigationTemplate from "./navigation";
 import HeaderTemplate from "./header";
 import AnimalDetailsTemplate from "@/components/template/AnimalDetailsTemplate";
 import HealthcareTemplate from "@/components/template/HealthcareTemplate";
@@ -12,21 +12,21 @@ import BirthFromExternalForm from "@/components/template/Form/BirthFromExternalF
 import BirthHistoricTemplate from "@/components/template/BirthHistoricTemplate";
 
 const Template = {
-    NavigationTemplate,
-    HeaderTemplate,
-    AnimalDetailsTemplate,
-    HealthcareTemplate,
-    LoadingErrorTemplate,
-    LoadingTemplate,
-    BirthHistoricTemplate,
-}
+  NavigationTemplate,
+  HeaderTemplate,
+  AnimalDetailsTemplate,
+  HealthcareTemplate,
+  LoadingErrorTemplate,
+  LoadingTemplate,
+  BirthHistoricTemplate,
+};
 
 const Form = {
-    BreedingForm,
-    AnimalForm,
-    HealthCareForm,
-    BirthFromBreedingForm,
-    BirthFromExternalForm,
-}
+  BreedingForm,
+  AnimalForm,
+  HealthCareForm,
+  BirthFromBreedingForm,
+  BirthFromExternalForm,
+};
 
-export {Template, Form};
+export { Template, Form };

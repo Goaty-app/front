@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export interface NavProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
@@ -6,15 +6,15 @@ export interface NavProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const Nav = React.forwardRef<HTMLElement, NavProps>(
-  ({ children, className = '', ...rest }, ref) => {
-    Nav.displayName = 'Nav';
+  ({ children, className = "", ...rest }, ref) => {
+    Nav.displayName = "Nav";
 
     return (
       <nav ref={ref} className={`nav ${className}`} {...rest}>
         {children}
       </nav>
     );
-  }
+  },
 );
 
 export default Nav;

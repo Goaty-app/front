@@ -1,3 +1,3 @@
 export interface ForeignKey {
-    id: number,
+  id: number;
 }

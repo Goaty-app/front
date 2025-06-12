@@ -1,54 +1,54 @@
 :root {
-    /* CARD BASE */
-    --card-bg: var(--main-layer-1);
-    --card-border: #E0E0E0;
-    --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    --card-radius: 0.75rem;
-    --card-padding: 1rem;
+  /* CARD BASE */
+  --card-bg: var(--main-layer-1);
+  --card-border: #e0e0e0;
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --card-radius: 0.75rem;
+  --card-padding: 1rem;
 
-    /* CARD LINK */
-    --card-bg-blue: #0f578d;
-    --card-bg-green: #12ca2e;
-    --card-bg-orange: #bc6a05;
-    --card-bg-yellow: #d8b72e;
+  /* CARD LINK */
+  --card-bg-blue: #0f578d;
+  --card-bg-green: #12ca2e;
+  --card-bg-orange: #bc6a05;
+  --card-bg-yellow: #d8b72e;
 
-    /* BADGE */
-    --badge-font-size: 0.75rem;
-    --badge-padding: 0.25rem 0.5rem;
-    --badge-radius: 0.5rem;
+  /* BADGE */
+  --badge-font-size: 0.75rem;
+  --badge-padding: 0.25rem 0.5rem;
+  --badge-radius: 0.5rem;
 
-    --badge-color-default: var(--dark-text);
-    --badge-bg-default: #EDEDED;
+  --badge-color-default: var(--dark-text);
+  --badge-bg-default: #ededed;
 
-    --badge-bg-success: #DFF2BF;
-    --badge-bg-warning: #FFE9B3;
-    --badge-bg-error: #F8D7DA;
-    --badge-bg-info: #D1ECF1;
+  --badge-bg-success: #dff2bf;
+  --badge-bg-warning: #ffe9b3;
+  --badge-bg-error: #f8d7da;
+  --badge-bg-info: #d1ecf1;
 
-    /* CHIP */
-    --chip-font-size: 0.75rem;
-    --chip-padding: 0.25rem 0.5rem;
-    --chip-radius: 1rem;
-    --chip-bg: #F2F2F2;
-    --chip-color: var(--dark-text);
-    --chip-hover-bg: #E0E0E0;
+  /* CHIP */
+  --chip-font-size: 0.75rem;
+  --chip-padding: 0.25rem 0.5rem;
+  --chip-radius: 1rem;
+  --chip-bg: #f2f2f2;
+  --chip-color: var(--dark-text);
+  --chip-hover-bg: #e0e0e0;
 }
 
 .dark-theme {
-    --card-bg: var(--main-layer-2);
-    --card-border: #3A3A3A;
-    --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --card-bg: var(--main-layer-2);
+  --card-border: #3a3a3a;
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 
-    --badge-bg-default: #444;
-    --badge-color-default: var(--light-text);
+  --badge-bg-default: #444;
+  --badge-color-default: var(--light-text);
 
-    --chip-bg: #555;
-    --chip-color: var(--light-text);
-    --chip-hover-bg: #666;
+  --chip-bg: #555;
+  --chip-color: var(--light-text);
+  --chip-hover-bg: #666;
 
-    /* CARD LINK */
-    --card-bg-blue: #06375a;
-    --card-bg-green: #216c2e;
-    --card-bg-orange: #633b04;
-    --card-bg-yellow: #8c0000;
+  /* CARD LINK */
+  --card-bg-blue: #06375a;
+  --card-bg-green: #216c2e;
+  --card-bg-orange: #633b04;
+  --card-bg-yellow: #8c0000;
 }

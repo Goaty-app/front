@@ -34,4 +34,15 @@ const Loader = { Grass, ImageGoat };
 const Typography = { Title, Text, Label, TextArea };
 const Containers = { Nav, Simple, Header, Main, Aside };
 
-export { Typography, Containers, Loader, Btn, Link, Input, Production, Select, Form, Option };
+export {
+  Typography,
+  Containers,
+  Loader,
+  Btn,
+  Link,
+  Input,
+  Production,
+  Select,
+  Form,
+  Option,
+};

@@ -35,7 +35,7 @@ const Navigation = {
 const Table = {
   AnimalTable,
   TableFilter,
-}
+};
 
 const Cards = {
   CardLink,
@@ -50,11 +50,10 @@ const Icons = {
     BurgerIcon,
   },
 };
-;
 const Labeled = {
   LabeledText,
   LabeledInput,
   LabeledTextArea,
-}
+};
 
 export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, Labeled };
