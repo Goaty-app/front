@@ -2,6 +2,7 @@ import NavigationTemplate from "./navigation";
 import HeaderTemplate from "./header";
 import AnimalDetailsTemplate from "@/components/template/AnimalDetailsTemplate";
 import HealthcareTemplate from "@/components/template/HealthcareTemplate";
+import ProductionSearchTemplate from "@/components/template/ProductionSearchTemplate";
 import LoadingErrorTemplate from "@/components/template/LoadingErrorTemplate";
 import LoadingTemplate from "@/components/template/LoadingTemplate";
 import BreedingForm from "@/components/template/Form/BreedingForm";
@@ -16,6 +17,7 @@ const Template = {
   HeaderTemplate,
   AnimalDetailsTemplate,
   HealthcareTemplate,
+  ProductionSearchTemplate,
   LoadingErrorTemplate,
   LoadingTemplate,
   BirthHistoricTemplate,

@@ -5,6 +5,7 @@ import { DeviceProvider } from "@/context/deviceContext";
 import { Containers } from "@/components/atoms";
 import React from "react";
 import StoreProvider from "@/store/storeProvider";
+import AppDataLoader from "@/store/appDataLoader";
 import { Template } from "@/components/template";
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
         <DeviceProvider>
           <AuthProvider>
             <StoreProvider>
+              <AppDataLoader />
               <Containers.Simple className="flex-1 overflow-y-auto relative flex flex-col sm:flex-row my-4 mx-2 gap-4">
                 <Containers.Aside className="hidden sm:block sticky top-4 h-full w-[20%] bg-layer-2 rounded-sm p-2">
                   <Template.NavigationTemplate />

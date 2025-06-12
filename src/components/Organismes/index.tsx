@@ -6,6 +6,7 @@ import AppIcon from "./AppIcon";
 // SEARCH TABLE
 import SearchAnimal from "./SearchTable/SearchAnimal";
 import AnimalMainContent from "@/components/Organismes/AnimalDetails/AnimalMainContent";
+import SearchProduction from "@/components/Organismes/SearchTable/SearchProduction";
 
 // BTNS
 import AddHealthcare from "@/components/Organismes/Btns/AddHealthcare";
@@ -13,6 +14,7 @@ import EditAnimal from "@/components/Organismes/Btns/EditAnimal";
 
 const SearchTable = {
   SearchAnimal,
+  SearchProduction,
 };
 
 const AnimalDetails = {

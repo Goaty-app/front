@@ -5,7 +5,7 @@ import type {
   RefreshToken,
 } from "@/interface/auth.interface";
 
-const TOKEN_KEY = "auth_token";
+const TOKEN_KEY = "authToken";
 
 export const getToken = () => {
   if (typeof window === "undefined") return null;
