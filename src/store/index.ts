@@ -84,7 +84,7 @@ export const loadAllData = createAsyncThunk('appData/loadAllData', async (_, { r
       healthcares: healthRes.data,
       productions: prodRes.data,
     };
-  } catch (error) {
+  } catch {
     return rejectWithValue('Erreur lors du chargement des données');
   }
 });

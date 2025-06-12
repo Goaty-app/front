@@ -4,8 +4,6 @@ import React, { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import AnimalSearchTemplate from "@/components/template/AnimalSearchTemplate";
 import { SearchTable } from "@/components/Organismes";
-import { Animal } from "@/interface/animal.interface";
-import { Herd } from "@/interface/herd.interface";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/store";
 
