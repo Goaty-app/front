@@ -45,4 +45,10 @@
   --chip-bg: #555;
   --chip-color: var(--light-text);
   --chip-hover-bg: #666;
+
+  /* CARD LINK */
+  --card-bg-blue: #06375a;
+  --card-bg-green: #216c2e;
+  --card-bg-orange: #633b04;
+  --card-bg-yellow: #8c0000;
 }

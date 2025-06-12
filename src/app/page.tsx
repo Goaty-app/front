@@ -5,6 +5,7 @@ import { Cards } from "@/components/molecules";
 import FindGoatModal from "@/components/modals/findGoat.modal";
 import { useState } from "react";
 import { Containers, Typography } from "@/components/atoms";
+import HealthCareModal from "@/components/modals/healthCare.modal";
 
 export default function Home() {
   const { isAuthenticated } = useAuth();
@@ -12,6 +13,7 @@ export default function Home() {
   const handleOpenFindGoat = () => {
     setIsFindGoatOpen(true);
   };
+  const [isHealthCareOpen, setIsHealCareOpen] = useState(false);
 
   return (
     <Containers.Simple className="w-full h-full">
@@ -23,8 +25,8 @@ export default function Home() {
             title={"Chèvre"}
             description={"Trouver une chèvre."}
           />
-          <Cards.CardLink
-            href={"/care"}
+          <Cards.CardBtn
+            onClick={() => setIsHealCareOpen(true)}
             color={"blue"}
             title={"Soin"}
             description={"Ajouter un soin."}
@@ -38,8 +40,8 @@ export default function Home() {
           <Cards.CardLink
             href={"/birth"}
             color={"yellow"}
-            title={"Naissance"}
-            description={"Gérer vos naissances ici !"}
+            title={"Nouvel arrivant"}
+            description={"Gérer vos naissances ou nouvel arrivant ici!"}
           />
         </Containers.Simple>
       ) : (
@@ -48,6 +50,10 @@ export default function Home() {
         </Typography.Text>
       )}
       <FindGoatModal open={isFindGoatOpen} onOpenChange={setIsFindGoatOpen} />
+      <HealthCareModal
+        open={isHealthCareOpen}
+        onOpenChange={setIsHealCareOpen}
+      />
     </Containers.Simple>
   );
 }

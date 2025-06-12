@@ -21,15 +21,15 @@
   --main-color-1: #8c7b26;
   --main-color-2: #40352c;
 
-  --main-layer-1: #f2ceae;
-  --main-layer-3: #8c6954;
-  --main-layer-2: #d9a78b;
+  --main-layer-1: #0c0c0c;
+  --main-layer-3: #1c1c1c;
+  --main-layer-2: #272727;
 
   --light-text: #cfa933;
   --dark-text: #cfa933;
   --primary-text: #4b6b2c;
   --warning-text: #f12222;
-  --accent-text: #005f73;
+  --accent-text: #098aa6;
 
   --shadow-layer-1: 0 2px 4px rgba(0, 0, 0, 0.25);
   --shadow-layer-2: 0 3px 6px rgba(0, 0, 0, 0.3);

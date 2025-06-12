@@ -1,4 +1,6 @@
 :root {
+  --icon-bg: #4b6b2c;
+
   /* === PRIMARY === */
   --btn-primary-bg: #4b6b2c;
   --btn-primary-bg-hover: #3f5c26; /* ~12% plus foncé */
@@ -25,6 +27,8 @@
 }
 
 .dark-theme {
+  --icon-bg: #56832e;
+
   /* === PRIMARY === */
   --btn-primary-bg: #4b6b2c;
   --btn-primary-bg-hover: #3f5c26; /* ~12% plus foncé */
@@ -33,10 +37,10 @@
   --btn-primary-shadow: 0 0 6px rgba(75, 107, 44, 0.4);
 
   /* === ACCENT === */
-  --btn-accent-bg: #26c6da;
-  --btn-accent-bg-hover: #1fa7b7;
-  --btn-accent-border: #23b6ca;
-  --btn-accent-border-hover: #1a94a3;
+  --btn-accent-bg: #0f5d6c;
+  --btn-accent-bg-hover: #0e5360;
+  --btn-accent-border: #0e5360;
+  --btn-accent-border-hover: #0d4e59;
   --btn-accent-shadow: 0 0 8px rgba(38, 198, 218, 0.5);
 
   /* === WARNING === */

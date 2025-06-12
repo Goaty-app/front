@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "@/context/authContext";
 import { DeviceProvider } from "@/context/deviceContext";
-import Template from "@/components/template";
 import { Containers } from "@/components/atoms";
 import React from "react";
 import StoreProvider from "@/store/storeProvider";
 import AppDataLoader from "@/store/appDataLoader";
+import { Template } from "@/components/template";
 
 export const metadata: Metadata = {
   title: "Goaty-App",
