@@ -18,10 +18,10 @@
   border-bottom: solid 8px #3f5c26;
 }
 
-.animate-delay-1 {
-  animation-delay: 1s;
+.delay-animation-1 {
+  animation-delay: 1s !important;
 }
 
-.animate-delay-2 {
-  animation-delay: 2s;
+.delay-animation-2 {
+  animation-delay: 2s !important;
 }

@@ -67,7 +67,7 @@ const FindGoat: React.FC<ModalProps> = ({ open, onOpenChange }) => {
             <Btn
               onClick={handleSubmit}
               disabled={!name.trim()}
-              variant="accent"
+              variant="primary"
               className="w-full py-2 rounded"
             >
               Chercher parmi les animaux

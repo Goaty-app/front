@@ -8,7 +8,7 @@ interface LabeledInputProps
   label: string;
   className?: string;
   name: string;
-  value: string | number;
+  value: number | string | undefined;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

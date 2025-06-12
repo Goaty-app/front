@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import React from "react";
 import { Btn, Containers } from "@/components/atoms";
 import { CreateHealthcare } from "@/interface/healthcare.interface";
-import HealthCareForm from "@/components/Organismes/Form/HealthCareForm";
+import HealthCareForm from "@/components/template/Form/HealthCareForm";
 
 interface EditHealthCareModalProps {
   open: boolean;

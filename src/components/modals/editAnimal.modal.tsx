@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import React from "react";
 import { Btn, Containers } from "@/components/atoms";
 import { Animal } from "@/interface/animal.interface";
-import AnimalForm from "@/components/Organismes/Form/AnimalForm";
+import AnimalForm from "@/components/template/Form/AnimalForm";
 
 interface EditAnimalModalProps {
   open: boolean;

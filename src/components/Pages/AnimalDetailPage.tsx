@@ -1,7 +1,7 @@
 import { Containers, Typography } from "@/components/atoms";
-import Template from "@/components/template";
 import React from "react";
 import { Animal } from "@/interface/animal.interface";
+import { Template } from "@/components/template";
 
 const AnimalDetailPage: React.FC<{ animal: Animal }> = ({ animal }) => {
   return (
