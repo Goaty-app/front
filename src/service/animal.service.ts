@@ -33,7 +33,7 @@ export const updateAnimal = async (
   id: string,
   animal: UpdateOrCreateAnimal,
 ) => {
-  return httpApi.put<Animal>(`/animals/${id}`, animal, {
+  return httpApi.patch<Animal>(`/animals/${id}`, animal, {
     headers: { "Content-Type": "application/json" },
   });
 };
@@ -64,7 +64,7 @@ export const createAnimalsType = async (herdId: string, type: AllType) => {
 };
 
 export const updateAnimalsType = async (id: string, type: AllType) => {
-  return httpApi.put<AllType>(`/animal-types/${id}`, type, {
+  return httpApi.patch<AllType>(`/animal-types/${id}`, type, {
     headers: { "Content-Type": "application/json" },
   });
 };
@@ -88,13 +88,17 @@ export const createBirth = async (birth: CreateBirth) => {
 };
 
 export const updateBirth = async (birthId: string, birth: UpdateBirth) => {
-  return httpApi.put<BirthResponse>(`/births/${birthId}`, birth, {
+  return httpApi.patch<BirthResponse>(`/births/${birthId}`, birth, {
     headers: { "Content-Type": "application/json" },
   });
 };
 
 export const deleteBirth = async (birthId: string) => {
   return httpApi.delete<null>(`/births/${birthId}`);
+};
+
+export const getAllBirths = async () => {
+  return httpApi.get<BirthResponse[]>(`/births`);
 };
 
 export const getAllBreedings = async () => {
@@ -119,7 +123,7 @@ export const updateBreeding = async (
   breedingId: string,
   breeding: CreateOrUpdateBreeding,
 ) => {
-  return httpApi.put<Breeding>(`/breedings/${breedingId}`, breeding, {
+  return httpApi.patch<Breeding>(`/breedings/${breedingId}`, breeding, {
     headers: { "Content-Type": "application/json" },
   });
 };

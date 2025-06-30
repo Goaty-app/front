@@ -1,11 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { SearchTable } from "@/components/Organismes";
-import {
-  mockProductions,
-  ProductionInterface,
-} from "@/interface/production.interface";
+import { getProduction } from "@/service/production.service";
+import type { ProductionInterface } from "@/interface/production.interface";
 import ProductionSearchTemplate from "@/components/template/ProductionSearchTemplate";
 
 export default function SearchProductionPage() {
@@ -13,8 +11,11 @@ export default function SearchProductionPage() {
   const [quantityUnit, setQuantityUnit] = useState("");
   const [herd, setHerd] = useState("");
   const [date, setDate] = useState("");
+  const [allProductions, setAllProductions] = useState<ProductionInterface[]>([]);
 
-  const allProductions: ProductionInterface[] = mockProductions;
+  useEffect(() => {
+    getProduction().then((res) => setAllProductions(res.data || []));
+  }, []);
 
   const filteredProduction = useMemo(() => {
     return allProductions.filter((production) => {

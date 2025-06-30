@@ -3,6 +3,7 @@ import type {
   Auth,
   AuthResponse,
   RefreshToken,
+  UserMe, 
 } from "@/interface/auth.interface";
 
 const TOKEN_KEY = "authToken";
@@ -79,3 +80,26 @@ export const refreshToken = async (refresh_token: RefreshToken) => {
 export const logout = () => {
   removeToken();
 };
+
+export const getMe = async () => {
+  try {
+    const response = await httpAuth.get<UserMe>("/me", {
+      headers: { "Content-Type": "application/json" },
+    });
+    return { data: response.data, status: response.status };
+  } catch (error: unknown) {
+    if (error && typeof error === "object" && "response" in error) {
+      const err = error as {
+        response?: { data?: { message?: string }; status?: number };
+        message?: string;
+      };
+      return {
+        error: err.response?.data?.message || err.message || "Network error",
+        status: err.response?.status || 0,
+      };
+    }
+    return { error: "Network error", status: 0 };
+  }
+};
+
+

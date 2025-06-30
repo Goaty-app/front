@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -11,9 +11,16 @@ import {
   Paper,
 } from "@mui/material";
 import { Typography } from "@/components/atoms";
-import { mockBirths } from "@/interface/birth.interface";
+import { getAllBirths } from "@/service/animal.service";
+import type { BirthResponse } from "@/interface/birth.interface";
 
 const BirthHistory: React.FC = () => {
+  const [births, setBirths] = useState<BirthResponse[]>([]);
+
+  useEffect(() => {
+    getAllBirths().then((res) => setBirths(res.data || []));
+  }, []);
+
   return (
     <TableContainer
       component={Paper}
@@ -47,7 +54,7 @@ const BirthHistory: React.FC = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {mockBirths.map((birth) => (
+          {births.map((birth) => (
             <TableRow className="bg-row" key={birth.id} hover>
               <TableCell>{birth.id}</TableCell>
               <TableCell>{birth.child.id}</TableCell>
