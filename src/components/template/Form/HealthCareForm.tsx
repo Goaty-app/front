@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { Animal, mockAnimals } from "@/interface/animal.interface";
+import React, { useEffect, useState } from "react";
+import { Animal } from "@/interface/animal.interface";
+import { getAnimals } from "@/service/animal.service";
 import { Btn, Form, Option, Select } from "@/components/atoms";
 import { Labeled } from "@/components/molecules";
 import { CreateHealthcare } from "@/interface/healthcare.interface";
@@ -16,11 +17,17 @@ const HealthCareForm: React.FC<HealthCareFormProps> = ({ onSubmit }) => {
     description: "",
   });
 
-  const [animalSelectedID, setAnimalSelectedID] = useState<number>(
-    mockAnimals[0].id,
-  );
+  const [animalList, setAnimalList] = useState<Animal[]>([]);
+  const [animalSelectedID, setAnimalSelectedID] = useState<number | null>(null);
 
-  const mockAnimalFromStore: Array<Animal> = mockAnimals;
+  useEffect(() => {
+    getAnimals().then((res) => {
+      setAnimalList(res.data || []);
+      if (res.data && res.data.length > 0) {
+        setAnimalSelectedID(res.data[0].id);
+      }
+    });
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -37,7 +44,9 @@ const HealthCareForm: React.FC<HealthCareFormProps> = ({ onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ animalId: animalSelectedID, form: formState });
+    if (animalSelectedID !== null) {
+      onSubmit({ animalId: animalSelectedID, form: formState });
+    }
   };
 
   return (
@@ -57,11 +66,11 @@ const HealthCareForm: React.FC<HealthCareFormProps> = ({ onSubmit }) => {
         onChange={handleChange}
       />
       <Select
-        value={animalSelectedID}
+        value={animalSelectedID ?? ""}
         onChange={handleAnimalSelection}
         className="p-2 rounded border bg-layer-1"
       >
-        {mockAnimalFromStore.map((animal) => (
+        {animalList.map((animal) => (
           <Option key={animal.id} value={animal.id}>
             {animal.name}
           </Option>

@@ -3,15 +3,16 @@
 import { useParams } from "next/navigation";
 import { Suspense } from "react";
 import AnimalDetailPage from "@/components/Pages/AnimalDetailPage";
-import { mockAnimal } from "@/interface/animal.interface";
+import { getAnimalById } from "@/service/animal.service";
 
-export default function Page() {
+export default async function Page() {
   const { id } = useParams();
-  console.log(id);
+  const animalRes = await getAnimalById(id as string);
+  const animal = animalRes.data;
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <AnimalDetailPage animal={mockAnimal} />
+      <AnimalDetailPage animal={animal} />
     </Suspense>
   );
 }

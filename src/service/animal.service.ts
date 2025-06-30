@@ -97,6 +97,10 @@ export const deleteBirth = async (birthId: string) => {
   return httpApi.delete<null>(`/births/${birthId}`);
 };
 
+export const getAllBirths = async () => {
+  return httpApi.get<BirthResponse[]>(`/births`);
+};
+
 export const getAllBreedings = async () => {
   return httpApi.get<Breeding[]>(`/breedings`);
 };
