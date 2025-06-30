@@ -46,3 +46,7 @@ export const updateProductionType = async (id: number, type: AllType) => {
 export const deleteProductionType = async (id: number) => {
   return httpApi.delete<null>(`/productions-types/${id}`);
 };
+
+export const deleteProduction = async (id: number) => {
+  return httpApi.delete<null>(`/productions/${id}`);
+};
