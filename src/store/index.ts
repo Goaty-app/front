@@ -4,16 +4,20 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 import { httpApi } from "@/lib/HTTPClient";
-import { getHerds } from '@/service/herd.service';
-import { getAnimals } from '@/service/animal.service';
-import { getAllFoodStocks } from '@/service/food.service';
-import { getHealthcares } from '@/service/healthcare.service';
-import { getProduction } from '@/service/production.service';
-import type { Herd } from '@/interface/herd.interface';
-import type { Animal } from '@/interface/animal.interface';
-import type { FoodStock } from '@/interface/foodStock.interface';
-import type { Healthcare } from '@/interface/healthcare.interface';
-import type { ProductionInterface } from '@/interface/production.interface';
+import { getHerds } from "@/service/herd.service";
+import { getAnimals } from "@/service/animal.service";
+import { getAllFoodStocks } from "@/service/food.service";
+import { getHealthcares } from "@/service/healthcare.service";
+import {
+  getProduction,
+  getProductionTypes,
+} from "@/service/production.service";
+import type { Herd } from "@/interface/herd.interface";
+import type { Animal } from "@/interface/animal.interface";
+import type { FoodStock } from "@/interface/foodStock.interface";
+import type { Healthcare } from "@/interface/healthcare.interface";
+import type { ProductionInterface } from "@/interface/production.interface";
+import { AllType } from "@/interface/allType.interface";
 
 // TODO: Define every slice
 // TODO: Move slices to their part
@@ -68,54 +72,62 @@ const asyncSlice = createSlice({
   },
 });
 
-export const loadAllData = createAsyncThunk('appData/loadAllData', async (_, { rejectWithValue }) => {
-  try {
-    const [herdsRes, animalsRes, foodRes, healthRes, prodRes] = await Promise.all([
-      getHerds(),
-      getAnimals(),
-      getAllFoodStocks(),
-      getHealthcares(),
-      getProduction(),
-    ]);
-    return {
-      herds: herdsRes.data,
-      animals: animalsRes.data,
-      foodStocks: foodRes.data,
-      healthcares: healthRes.data,
-      productions: prodRes.data,
-    };
-  } catch {
-    return rejectWithValue('Erreur lors du chargement des données');
-  }
-});
+export const loadAllData = createAsyncThunk(
+  "appData/loadAllData",
+  async (_, { rejectWithValue }) => {
+    try {
+      const [herdsRes, animalsRes, foodRes, healthRes, prodRes, prodTypeRes] =
+        await Promise.all([
+          getHerds(),
+          getAnimals(),
+          getAllFoodStocks(),
+          getHealthcares(),
+          getProduction(),
+          getProductionTypes(),
+        ]);
+      return {
+        herds: herdsRes.data,
+        animals: animalsRes.data,
+        foodStocks: foodRes.data,
+        healthcares: healthRes.data,
+        productions: prodRes.data,
+        productionTypes: prodTypeRes.data,
+      };
+    } catch {
+      return rejectWithValue("Erreur lors du chargement des données");
+    }
+  },
+);
 
 const appDataSlice = createSlice({
-  name: 'appData',
+  name: "appData",
   initialState: {
     herds: [] as Herd[],
     animals: [] as Animal[],
     foodStocks: [] as FoodStock[],
     healthcares: [] as Healthcare[],
     productions: [] as ProductionInterface[],
-    status: 'idle',
-    error: '',
+    productionTypes: [] as AllType[],
+    status: "idle",
+    error: "",
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(loadAllData.pending, (state) => {
-        state.status = 'pending';
+        state.status = "pending";
       })
       .addCase(loadAllData.fulfilled, (state, action) => {
-        state.status = 'fulfilled';
+        state.status = "fulfilled";
         state.herds = action.payload.herds;
         state.animals = action.payload.animals;
         state.foodStocks = action.payload.foodStocks;
         state.healthcares = action.payload.healthcares;
         state.productions = action.payload.productions;
+        state.productionTypes = action.payload.productionTypes;
       })
       .addCase(loadAllData.rejected, (state, action) => {
-        state.status = 'error';
+        state.status = "error";
         state.error = action.payload as string;
       });
   },

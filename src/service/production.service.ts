@@ -32,7 +32,7 @@ export const updateProduction = async (
 };
 
 export const getProductionTypes = async () => {
-  return httpApi.get<AllType[]>("/productions-types");
+  return httpApi.get<AllType[]>("/production-types");
 };
 
 export const createProductionType = async (type: AllType) => {

@@ -4,6 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import React from "react";
 import { Containers } from "../atoms";
 import { ModalProps } from "@/interface/modal.interface";
+import ProductionUpdateForm from "@/components/template/Form/ProductionUpdateForm";
 
 interface Props extends ModalProps {
   productionId: number;
@@ -13,6 +14,10 @@ const ProductionUpdateModal: React.FC<Props> = ({
   onOpenChange,
   open,
 }) => {
+  const handleSubmit = (data: unknown) => {
+    console.log("Formulaire soumis :", data);
+    onOpenChange(false);
+  };
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
@@ -24,8 +29,10 @@ const ProductionUpdateModal: React.FC<Props> = ({
             </Dialog.Title>
           </Containers.Simple>
           <Containers.Simple className="space-y-4 mt-12">
-            <p>Formulaire de modification ici…</p>
-            <p>ID : {productionId}</p>
+            <ProductionUpdateForm
+              onSubmit={handleSubmit}
+              productionId={productionId}
+            />
           </Containers.Simple>
         </Dialog.Content>
       </Dialog.Portal>

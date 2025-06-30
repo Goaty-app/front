@@ -4,11 +4,16 @@ import * as Dialog from "@radix-ui/react-dialog";
 import React from "react";
 import { Containers } from "../atoms";
 import { ModalProps } from "@/interface/modal.interface";
+import ProductionCreateForm from "@/components/template/Form/ProductionCreateForm";
 
 const ProductionCreateModal: React.FC<ModalProps> = ({
   open,
   onOpenChange,
 }) => {
+  const handleSubmit = (data: unknown) => {
+    console.log("Formulaire soumis :", data);
+    onOpenChange(false);
+  };
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
@@ -20,7 +25,7 @@ const ProductionCreateModal: React.FC<ModalProps> = ({
             </Dialog.Title>
           </Containers.Simple>
           <Containers.Simple className="space-y-4 mt-12">
-            <p>Formulaire de création ici…</p>
+            <ProductionCreateForm onSubmit={handleSubmit} />
           </Containers.Simple>
         </Dialog.Content>
       </Dialog.Portal>

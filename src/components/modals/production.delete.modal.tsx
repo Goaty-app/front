@@ -4,6 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import React from "react";
 import { Containers } from "../atoms";
 import { ModalProps } from "@/interface/modal.interface";
+import ProductionDeleteForm from "@/components/template/Form/ProductionDeleteForm";
 
 interface Props extends ModalProps {
   productionId: number;
@@ -13,6 +14,10 @@ const ProductionDeleteModal: React.FC<Props> = ({
   open,
   onOpenChange,
 }) => {
+  const handleSubmit = (data: unknown) => {
+    console.log("Formulaire soumis :", data);
+    onOpenChange(false);
+  };
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
@@ -24,10 +29,10 @@ const ProductionDeleteModal: React.FC<Props> = ({
             </Dialog.Title>
           </Containers.Simple>
           <Containers.Simple className="space-y-4 mt-12">
-            <p>Supprimer la production #{productionId} ?</p>
-            <button className="mt-4 bg-red-600 text-white px-4 py-2 rounded">
-              Confirmer la suppression
-            </button>
+            <ProductionDeleteForm
+              onSubmit={handleSubmit}
+              productionId={productionId}
+            />
           </Containers.Simple>
         </Dialog.Content>
       </Dialog.Portal>

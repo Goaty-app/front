@@ -11,6 +11,9 @@ import HealthCareForm from "@/components/template/Form/HealthCareForm";
 import BirthFromBreedingForm from "@/components/template/Form/BirthFromBreedingForm";
 import BirthFromExternalForm from "@/components/template/Form/BirthFromExternalForm";
 import BirthHistoricTemplate from "@/components/template/BirthHistoricTemplate";
+import ProductionCreateForm from "./Form/ProductionCreateForm";
+import ProductionUpdateForm from "./Form/ProductionUpdateForm";
+import ProductionDeleteForm from "./Form/ProductionDeleteForm";
 
 const Template = {
   NavigationTemplate,
@@ -29,6 +32,9 @@ const Form = {
   HealthCareForm,
   BirthFromBreedingForm,
   BirthFromExternalForm,
+  ProductionCreateForm,
+  ProductionUpdateForm,
+  ProductionDeleteForm,
 };
 
 export { Template, Form };

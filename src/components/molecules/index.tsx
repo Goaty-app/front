@@ -28,6 +28,8 @@ import ProductionTab from "./ProductionTable/ProductionTab";
 import LabeledTextArea from "@/components/molecules/Labeled/LabeledTextArea";
 import LabeledText from "@/components/molecules/Labeled/LabeledText";
 import LabeledInput from "@/components/molecules/Labeled/LabeledInput";
+import LabeledRadio from "@/components/molecules/Labeled/LabeledRadio";
+import LabeledRadioCommon from "@/components/molecules/Labeled/LabeledRadioCommon";
 
 const Navigation = {
   AccordionSection,
@@ -58,6 +60,8 @@ const Labeled = {
   LabeledText,
   LabeledInput,
   LabeledTextArea,
+  LabeledRadio,
+  LabeledRadioCommon,
 };
 
 export {
