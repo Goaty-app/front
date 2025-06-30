@@ -12,6 +12,7 @@ import ThemeIcon from "./Icons/ThemeIcon";
 import AuthIcon from "./Icons/AuthIcon";
 import BurgerIcon from "./Icons/MenuIcon.mobile";
 import GoatIcon from "./Icons/GoatIcon";
+import CrudProductionIcon from "./Icons/CrudProductionIcon";
 
 // NAVIGATION
 import AccordionSection from "./Navigation/AccordionSection";
@@ -45,6 +46,7 @@ const Cards = {
 };
 
 const Icons = {
+  CrudProductionIcon,
   ThemeIcon,
   AuthIcon,
   GoatIcon,
@@ -58,4 +60,13 @@ const Labeled = {
   LabeledTextArea,
 };
 
-export { ProductionTab, GoatGroup, Cards, Icons, Navigation, Table, LabeledText, Labeled };
+export {
+  ProductionTab,
+  GoatGroup,
+  Cards,
+  Icons,
+  Navigation,
+  Table,
+  LabeledText,
+  Labeled,
+};
