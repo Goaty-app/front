@@ -33,7 +33,7 @@ export const updateFoodStock = async (
   id: number,
   foodStock: UpdateFoodStock,
 ) => {
-  return httpApi.put<FoodStock>(`/food-stocks/${id}`, foodStock, {
+  return httpApi.patch<FoodStock>(`/food-stocks/${id}`, foodStock, {
     headers: { "Content-Type": "application/json" },
   });
 };
@@ -89,7 +89,7 @@ export const createFoodType = async (foodType: AllType) => {
 };
 
 export const updateFoodType = async (id: number, foodType: AllType) => {
-  return httpApi.put<AllType>(`/food-stock-types/${id}`, foodType, {
+  return httpApi.patch<AllType>(`/food-stock-types/${id}`, foodType, {
     headers: { "Content-Type": "application/json" },
   });
 };

@@ -9,3 +9,8 @@ export interface AuthResponse {
 }
 
 export type RefreshToken = Pick<AuthResponse, "refresh_token">;
+
+export interface UserMe {
+  id: number;
+  email: string;
+}

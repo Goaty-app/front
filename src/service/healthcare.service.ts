@@ -4,6 +4,7 @@ import type {
   CreateHealthcare,
 } from "@/interface/healthcare.interface";
 import type { AllType } from "@/interface/allType.interface";
+import type { Media } from "@/interface/media.interface";
 
 export const getHealthcares = async () => {
   return httpApi.get<Healthcare[]>("/healthcares");
@@ -25,7 +26,7 @@ export const addHealthcare = async (
 };
 
 export const updateHealthcare = async (id: string, data: CreateHealthcare) => {
-  return httpApi.put<Healthcare>(`/healthcares/${id}`, data);
+  return httpApi.patch<Healthcare>(`/healthcares/${id}`, data);
 };
 
 export const deleteHealthcare = async (id: string) => {
@@ -46,4 +47,17 @@ export const addHealthcareType = async (data: AllType) => {
 
 export const deleteHealthcareType = async (id: string) => {
   return httpApi.delete<null>(`/healthcare-types/${id}`);
+};
+
+export const addHealthcareMedia = async (id_healthcare: string, file: File) => {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  return httpApi.post<Media>(`/healthcares/${id_healthcare}/medias`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+};
+
+export const getMedia = async (id_media: string) => {
+  return httpApi.get<Media>(`/medias/${id_media}`);
 };

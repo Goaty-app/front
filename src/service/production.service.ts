@@ -28,7 +28,7 @@ export const updateProduction = async (
   id: number,
   production: ProductionInterface,
 ) => {
-  return httpApi.put<ProductionInterface>(`/productions/${id}`, production);
+  return httpApi.patch<ProductionInterface>(`/productions/${id}`, production);
 };
 
 export const getProductionTypes = async () => {
@@ -40,7 +40,7 @@ export const createProductionType = async (type: AllType) => {
 };
 
 export const updateProductionType = async (id: number, type: AllType) => {
-  return httpApi.put<AllType>(`/productions-types/${id}`, type);
+  return httpApi.patch<AllType>(`/productions-types/${id}`, type);
 };
 
 export const deleteProductionType = async (id: number) => {
