@@ -1,11 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { SearchTable } from "@/components/Organismes";
 import { ProductionInterface } from "@/interface/production.interface";
 import ProductionSearchTemplate from "@/components/template/ProductionSearchTemplate";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
+import LoadingTemplate from "@/components/template/LoadingTemplate";
+import LoadingErrorTemplate from "@/components/template/LoadingErrorTemplate";
 
 export default function SearchProductionPage() {
   const [name, setName] = useState("");
@@ -51,8 +53,8 @@ export default function SearchProductionPage() {
     });
   }, [allProductions, date, herd, name, quantityUnit]);
 
-  if (loading) return <div>Chargement...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return <LoadingTemplate />;
+  if (error) return <LoadingErrorTemplate />;
   return (
     <ProductionSearchTemplate>
       <SearchTable.SearchProduction

@@ -1,7 +1,6 @@
 "use client";
 
-import Form from "next/form";
-import { Btn } from "@/components/atoms";
+import { Btn, Form } from "@/components/atoms";
 import React, { useState } from "react";
 import { CreateProduction } from "@/interface/production.interface";
 import { QuantityUnit } from "@/enum/quantityUnit.enum";
@@ -10,8 +9,15 @@ import LabeledRadio from "@/components/molecules/Labeled/LabeledRadio";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import LabeledRadioCommon from "@/components/molecules/Labeled/LabeledRadioCommon";
+import LoadingTemplate from "@/components/template/LoadingTemplate";
+import LoadingErrorTemplate from "@/components/template/LoadingErrorTemplate";
 
-const ProductionCreateForm = ({ onSubmit }) => {
+interface ProductionCreateFormProps {
+  onSubmit: (data: { form: CreateProduction }) => void;
+}
+const ProductionCreateForm: React.FC<ProductionCreateFormProps> = ({
+  onSubmit,
+}) => {
   const [formState, setFormState] = useState<CreateProduction>({
     quantity: 0,
     quantityUnit: QuantityUnit.UNIT,
@@ -32,6 +38,9 @@ const ProductionCreateForm = ({ onSubmit }) => {
     >,
   ) => {
     const { name, value } = e.target;
+    console.log("ahhhhhh tu changes");
+    console.log(name);
+    console.log(value);
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -40,12 +49,15 @@ const ProductionCreateForm = ({ onSubmit }) => {
     e.preventDefault();
     onSubmit({ form: formState });
   };
+  if (loading) return <LoadingTemplate />;
+  if (error) return <LoadingErrorTemplate />;
   return (
     <Form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <LabeledRadio
         label={"Type de production"}
         name={"productionType"}
         values={productionTypes}
+        value={formState.productionType}
         onChange={handleChange}
       />
 
@@ -60,13 +72,10 @@ const ProductionCreateForm = ({ onSubmit }) => {
         label={"Unité"}
         name={"quantityUnit"}
         values={Object.values(QuantityUnit)}
+        value={formState.quantityUnit}
         onChange={handleChange}
       />
-      <Btn
-        variant="primary"
-        type="submit"
-        className="mt-2 p-2 bg-primary text-white rounded"
-      >
+      <Btn variant="primary" type="submit" className="mt-2 p-2 rounded">
         Créer
       </Btn>
     </Form>

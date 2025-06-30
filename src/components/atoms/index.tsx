@@ -22,12 +22,14 @@ import ImageGoat from "./Goat/ImageGoat";
 
 // PRODUCTION
 import ProductionLine from "./Production/ProductionLine";
+import ProductionSelectCommon from "@/components/atoms/Production/ProductionSelectCommon";
+import ProductionSelect from "@/components/atoms/Production/ProductionSelect";
 // SELECT
 import Select from "./Containers/select";
 import Option from "./option";
 import Form from "./form";
 
-const Production = { ProductionLine };
+const Production = { ProductionLine, ProductionSelectCommon, ProductionSelect };
 const Loader = { Grass, ImageGoat };
 const Typography = { Title, Text, Label, TextArea };
 const Containers = { Nav, Simple, Header, Main, Aside };
