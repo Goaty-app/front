@@ -2,11 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { SearchTable } from "@/components/Organismes";
-import {
-  mockProductions,
-  ProductionInterface,
-} from "@/interface/production.interface";
+import { ProductionInterface } from "@/interface/production.interface";
 import ProductionSearchTemplate from "@/components/template/ProductionSearchTemplate";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 export default function SearchProductionPage() {
   const [name, setName] = useState("");
@@ -14,7 +13,16 @@ export default function SearchProductionPage() {
   const [herd, setHerd] = useState("");
   const [date, setDate] = useState("");
 
-  const allProductions: ProductionInterface[] = mockProductions;
+  const productions = useSelector(
+    (state: RootState) => state.appData.productions,
+  );
+  const loading = useSelector(
+    (state: RootState) => state.appData.status === "pending",
+  );
+  const error = useSelector((state: RootState) => state.appData.error);
+
+  //let allProductions: ProductionInterface[] = mockProductions;
+  const allProductions: ProductionInterface[] = productions;
 
   const filteredProduction = useMemo(() => {
     return allProductions.filter((production) => {
@@ -41,8 +49,10 @@ export default function SearchProductionPage() {
           : true;
       return matchesName && matchesQuantity && matchesDate && matchesHerd;
     });
-  }, [allProductions, name, quantityUnit, date, herd]);
+  }, [allProductions, date, herd, name, quantityUnit]);
 
+  if (loading) return <div>Chargement...</div>;
+  if (error) return <div>{error}</div>;
   return (
     <ProductionSearchTemplate>
       <SearchTable.SearchProduction
