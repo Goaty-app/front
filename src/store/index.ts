@@ -1,7 +1,7 @@
 import {
   configureStore,
   createAsyncThunk,
-  createSlice,
+  createSlice, PayloadAction,
 } from "@reduxjs/toolkit";
 import { httpApi } from "@/lib/HTTPClient";
 import { getHerds } from '@/service/herd.service';
@@ -100,8 +100,20 @@ const appDataSlice = createSlice({
     status: 'idle',
     error: '',
   },
-  reducers: {},
-  extraReducers: (builder) => {
+  reducers: {
+    addHerd: (state, action: PayloadAction<Herd>) => {
+      state.herds.push(action.payload);
+    },
+    updateHerd: (state, action: PayloadAction<Herd>) => {
+      const index = state.herds.findIndex(h => h.id === action.payload.id);
+      if (index !== -1) {
+        state.herds[index] = action.payload;
+      }
+    },
+    removeHerd: (state, action: PayloadAction<string>) => {
+      state.herds = state.herds.filter(h => h.id !== action.payload);
+    },
+  },  extraReducers: (builder) => {
     builder
       .addCase(loadAllData.pending, (state) => {
         state.status = 'pending';
@@ -122,6 +134,8 @@ const appDataSlice = createSlice({
 });
 
 export const { showReducer } = taskSlice.actions;
+export const { addHerd, updateHerd, removeHerd } = appDataSlice.actions;
+
 
 export const store = configureStore({
   reducer: {

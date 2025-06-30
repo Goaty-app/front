@@ -16,7 +16,7 @@ export const createHerd = async (herd: CreateOrUpdateHerd) => {
 };
 
 export const updateHerd = async (id: string, herd: CreateOrUpdateHerd) => {
-  return httpApi.put<Herd>(`/herds/${id}`, herd, {
+  return httpApi.patch<Herd>(`/herds/${id}`, herd, {
     headers: { "Content-Type": "application/json" },
   });
 };
