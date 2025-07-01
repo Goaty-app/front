@@ -13,7 +13,8 @@ export interface ProductionInterface {
 }
 
 export interface CreateProduction {
+  herdId: number;
   quantity: number;
-  quantityUnit: QuantityUnit;
-  productionType: number;
+  quantityUnit: QuantityUnit | null;
+  productionTypeId: number;
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import { AllType } from "@/interface/allType.interface";
+import { Herd } from "@/interface/herd.interface";
 
 interface ProductionSelectCommonProps {
   name: string;
-  values: AllType[];
+  values: AllType[] | Herd[];
   value: number | string | undefined;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }

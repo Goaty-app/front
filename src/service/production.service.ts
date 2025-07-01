@@ -1,5 +1,8 @@
 import { httpApi } from "@/lib/HTTPClient";
-import type { ProductionInterface } from "@/interface/production.interface";
+import type {
+  CreateProduction,
+  ProductionInterface,
+} from "@/interface/production.interface";
 import type { AllType } from "@/interface/allType.interface";
 
 export const getProduction = async () => {
@@ -14,13 +17,19 @@ export const getProductionById = async (id: number) => {
   return httpApi.get<ProductionInterface>(`/productions/${id}`);
 };
 
-export const createProduction = async (
-  herdId: number,
-  production: ProductionInterface,
-) => {
+export const createProduction = async (production: CreateProduction) => {
+  const { herdId, ...payload } = production;
+
+  payload.productionDate = new Date()
+    .toISOString()
+    .substring(0, 19)
+    .replace("T", " ");
+
+  console.log("payload");
+  console.log(payload);
   return httpApi.post<ProductionInterface>(
     `/herds/${herdId}/productions`,
-    production,
+    payload,
   );
 };
 

@@ -3,7 +3,7 @@ import React from "react";
 
 interface ProductionSelectCommonProps {
   name: string;
-  value: number | string | undefined;
+  value: number | string | undefined | null;
   values: QuantityUnit[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }

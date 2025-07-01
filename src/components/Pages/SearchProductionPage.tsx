@@ -18,6 +18,8 @@ export default function SearchProductionPage() {
   const productions = useSelector(
     (state: RootState) => state.appData.productions,
   );
+  console.log("productions");
+  console.log(productions);
   const loading = useSelector(
     (state: RootState) => state.appData.status === "pending",
   );

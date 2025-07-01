@@ -19,14 +19,16 @@ const ProductionCreateForm: React.FC<ProductionCreateFormProps> = ({
   onSubmit,
 }) => {
   const [formState, setFormState] = useState<CreateProduction>({
+    herdId: -1,
     quantity: 0,
-    quantityUnit: QuantityUnit.UNIT,
-    productionType: 0,
+    quantityUnit: null,
+    productionTypeId: 0,
   });
 
   const productionTypes = useSelector(
     (state: RootState) => state.appData.productionTypes,
   );
+  const herds = useSelector((state: RootState) => state.appData.herds);
   const loading = useSelector(
     (state: RootState) => state.appData.status === "pending",
   );
@@ -54,10 +56,17 @@ const ProductionCreateForm: React.FC<ProductionCreateFormProps> = ({
   return (
     <Form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <LabeledRadio
+        label={"Troupeau"}
+        name={"herdId"}
+        values={herds}
+        value={formState.herdId}
+        onChange={handleChange}
+      />
+      <LabeledRadio
         label={"Type de production"}
-        name={"productionType"}
+        name={"productionTypeId"}
         values={productionTypes}
-        value={formState.productionType}
+        value={formState.productionTypeId}
         onChange={handleChange}
       />
 

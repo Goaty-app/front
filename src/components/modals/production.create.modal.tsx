@@ -5,14 +5,26 @@ import React from "react";
 import { Containers } from "../atoms";
 import { ModalProps } from "@/interface/modal.interface";
 import ProductionCreateForm from "@/components/template/Form/ProductionCreateForm";
+import { createProduction } from "@/service/production.service";
+import { CreateProduction } from "@/interface/production.interface";
 
 const ProductionCreateModal: React.FC<ModalProps> = ({
   open,
   onOpenChange,
 }) => {
-  const handleSubmit = (data: unknown) => {
-    console.log("Formulaire soumis :", data);
-    onOpenChange(false);
+  const handleSubmit = (data: { form: CreateProduction }) => {
+    console.log("Formulaire soumis :");
+    console.log(data.form);
+    const p: CreateProduction = {
+      ...data.form,
+      quantity: Number(data.form.quantity),
+      quantityUnit: data.form.quantityUnit,
+      productionTypeId: Number(data.form.productionTypeId),
+    };
+    createProduction(p).then((r) => {
+      console.log(r.data);
+      onOpenChange(false);
+    });
   };
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
