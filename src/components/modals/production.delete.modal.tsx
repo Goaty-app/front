@@ -5,18 +5,28 @@ import React from "react";
 import { Containers } from "../atoms";
 import { ModalProps } from "@/interface/modal.interface";
 import ProductionDeleteForm from "@/components/template/Form/ProductionDeleteForm";
+import { deleteProduction } from "@/service/production.service";
+import { ProductionInterface } from "@/interface/production.interface";
 
 interface Props extends ModalProps {
-  productionId: number;
+  production: ProductionInterface;
 }
 const ProductionDeleteModal: React.FC<Props> = ({
-  productionId,
+  production,
   open,
   onOpenChange,
 }) => {
   const handleSubmit = (data: unknown) => {
-    console.log("Formulaire soumis :", data);
-    onOpenChange(false);
+    console.log("Formulaire soumis :");
+    console.log(data);
+    console.log("production");
+    console.log(production);
+
+    deleteProduction(production.id).then((r) => {
+      console.log("Suppression réussie");
+      console.log(r.data);
+      onOpenChange(false);
+    });
   };
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -31,7 +41,7 @@ const ProductionDeleteModal: React.FC<Props> = ({
           <Containers.Simple className="space-y-4 mt-12">
             <ProductionDeleteForm
               onSubmit={handleSubmit}
-              productionId={productionId}
+              production={production}
             />
           </Containers.Simple>
         </Dialog.Content>

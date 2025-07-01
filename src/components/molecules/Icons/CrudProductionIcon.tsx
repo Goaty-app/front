@@ -56,7 +56,7 @@ const CrudProductionIcon = (props: CrudProductionButtonProps) => {
             <ProductionDeleteModal
               open={open}
               onOpenChange={setOpen}
-              productionId={props.production}
+              production={props.production}
             />
           )}
 
