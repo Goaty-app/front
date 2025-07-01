@@ -1,3 +1,9 @@
+## Before all
+
+  Once you have downloaded and make the back repositery fully worked on your Docker, you will have to create a .env with the followed URL : NEXT_PUBLIC_API_BASE_URL=https://localhost/api
+
+  We advise to not share your .env variables for professional project. 
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
