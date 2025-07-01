@@ -54,11 +54,11 @@ const ProductionTab: React.FC<Props> = ({ productionList }) => {
             <Production.ProductionLine key={prod.id} production={prod}>
               <CrudProductionIcon
                 action={"update"}
-                productionId={prod.id}
+                production={prod}
               ></CrudProductionIcon>
               <CrudProductionIcon
                 action={"delete"}
-                productionId={prod.id}
+                production={prod}
               ></CrudProductionIcon>
             </Production.ProductionLine>
           ))}

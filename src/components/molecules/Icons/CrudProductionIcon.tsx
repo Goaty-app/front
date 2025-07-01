@@ -4,10 +4,11 @@ import { Btn } from "@/components/atoms";
 import ProductionUpdateModal from "@/components/modals/production.update.modal";
 import ProductionCreateModal from "@/components/modals/production.create.modal";
 import ProductionDeleteModal from "@/components/modals/production.delete.modal";
+import { ProductionInterface } from "@/interface/production.interface";
 
 type CrudProductionButtonProps =
   | { action: "create" }
-  | { action: "update" | "delete"; productionId: number };
+  | { action: "update" | "delete"; production: ProductionInterface };
 
 const CrudProductionIcon = (props: CrudProductionButtonProps) => {
   const [open, setOpen] = useState(false);
@@ -47,7 +48,7 @@ const CrudProductionIcon = (props: CrudProductionButtonProps) => {
             <ProductionUpdateModal
               open={open}
               onOpenChange={setOpen}
-              productionId={props.productionId}
+              production={props.production}
             />
           )}
 
@@ -55,7 +56,7 @@ const CrudProductionIcon = (props: CrudProductionButtonProps) => {
             <ProductionDeleteModal
               open={open}
               onOpenChange={setOpen}
-              productionId={props.productionId}
+              productionId={props.production}
             />
           )}
 

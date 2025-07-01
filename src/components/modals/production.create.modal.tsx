@@ -13,8 +13,6 @@ const ProductionCreateModal: React.FC<ModalProps> = ({
   onOpenChange,
 }) => {
   const handleSubmit = (data: { form: CreateProduction }) => {
-    console.log("Formulaire soumis :");
-    console.log(data.form);
     const p: CreateProduction = {
       ...data.form,
       quantity: Number(data.form.quantity),
@@ -22,6 +20,7 @@ const ProductionCreateModal: React.FC<ModalProps> = ({
       productionTypeId: Number(data.form.productionTypeId),
     };
     createProduction(p).then((r) => {
+      console.log("Création réussie");
       console.log(r.data);
       onOpenChange(false);
     });

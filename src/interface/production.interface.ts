@@ -18,3 +18,15 @@ export interface CreateProduction {
   quantityUnit: QuantityUnit | null;
   productionTypeId: number;
 }
+
+export interface UpdateProduction {
+  herdId: number;
+  // Required
+  productionDate: string;
+  quantity: number;
+  quantityUnit: QuantityUnit;
+  productionTypeId: number;
+  // Optional
+  expirationDate: string | null;
+  notes: string | null;
+}

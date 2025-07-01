@@ -5,18 +5,42 @@ import React from "react";
 import { Containers } from "../atoms";
 import { ModalProps } from "@/interface/modal.interface";
 import ProductionUpdateForm from "@/components/template/Form/ProductionUpdateForm";
+import {
+  ProductionInterface,
+  UpdateProduction,
+} from "@/interface/production.interface";
+import { updateProduction } from "@/service/production.service";
 
 interface Props extends ModalProps {
-  productionId: number;
+  production: ProductionInterface;
 }
 const ProductionUpdateModal: React.FC<Props> = ({
-  productionId,
+  production,
   onOpenChange,
   open,
 }) => {
-  const handleSubmit = (data: unknown) => {
-    console.log("Formulaire soumis :", data);
-    onOpenChange(false);
+  const toSqlDateTime = (date: string | null): string => {
+    const d = new Date(date);
+    return d.toISOString().substring(0, 19).replace("T", " ");
+  };
+
+  const handleSubmit = (data: { form: UpdateProduction }) => {
+    console.log("Formulaire soumis :");
+    console.log(data.form);
+    const p: UpdateProduction = {
+      ...data.form,
+      quantity: Number(data.form.quantity),
+      expirationDate: toSqlDateTime(data.form.expirationDate),
+      productionDate: toSqlDateTime(data.form.productionDate),
+    };
+    console.log("p");
+    console.log(p);
+
+    updateProduction(production.id, p).then((r) => {
+      console.log("Mise à jour réussie");
+      console.log(r.data);
+      onOpenChange(false);
+    });
   };
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -31,7 +55,7 @@ const ProductionUpdateModal: React.FC<Props> = ({
           <Containers.Simple className="space-y-4 mt-12">
             <ProductionUpdateForm
               onSubmit={handleSubmit}
-              productionId={productionId}
+              production={production}
             />
           </Containers.Simple>
         </Dialog.Content>

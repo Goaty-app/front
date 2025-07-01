@@ -2,6 +2,7 @@ import { httpApi } from "@/lib/HTTPClient";
 import type {
   CreateProduction,
   ProductionInterface,
+  UpdateProduction,
 } from "@/interface/production.interface";
 import type { AllType } from "@/interface/allType.interface";
 
@@ -35,9 +36,9 @@ export const createProduction = async (production: CreateProduction) => {
 
 export const updateProduction = async (
   id: number,
-  production: ProductionInterface,
+  production: UpdateProduction,
 ) => {
-  return httpApi.put<ProductionInterface>(`/productions/${id}`, production);
+  return httpApi.patch<ProductionInterface>(`/productions/${id}`, production);
 };
 
 export const getProductionTypes = async () => {

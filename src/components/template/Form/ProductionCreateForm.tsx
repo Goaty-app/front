@@ -9,8 +9,6 @@ import LabeledRadio from "@/components/molecules/Labeled/LabeledRadio";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import LabeledRadioCommon from "@/components/molecules/Labeled/LabeledRadioCommon";
-import LoadingTemplate from "@/components/template/LoadingTemplate";
-import LoadingErrorTemplate from "@/components/template/LoadingErrorTemplate";
 
 interface ProductionCreateFormProps {
   onSubmit: (data: { form: CreateProduction }) => void;
@@ -40,19 +38,15 @@ const ProductionCreateForm: React.FC<ProductionCreateFormProps> = ({
     >,
   ) => {
     const { name, value } = e.target;
-    console.log("ahhhhhh tu changes");
-    console.log(name);
-    console.log(value);
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  console.log(onSubmit);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit({ form: formState });
   };
-  if (loading) return <LoadingTemplate />;
-  if (error) return <LoadingErrorTemplate />;
+  if (loading) return <div>je load...</div>;
+  if (error) return <div>erreur</div>;
   return (
     <Form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <LabeledRadio
